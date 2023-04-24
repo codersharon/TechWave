@@ -7,11 +7,12 @@ import PostItem from "./comps/postitem1";
 
 const Admin = (props) => {
 	const router = useRouter();
-	const [ postImage, setPostImage ] = useState("");
-	const [ postTitle, setPostTitle ] = useState("");
+	const [ all, setAll ] = useState([0])
 	const [ postDate, setPostDate ] = useState("");
 	const [ postTags, setPostTags ] = useState("");
-	const [ all, setAll ] = useState([0])
+	const [ postImage, setPostImage ] = useState("");
+	const [ postTitle, setPostTitle ] = useState("");
+	const [ postContent, setPostContent ] = useState("");
 	const [ adminID, setAdminID ] = useState(props.data[0].adid);
 	const [ adminPass, setAdminPass ] = useState(props.data[0].pass);
 	
@@ -34,6 +35,7 @@ const Admin = (props) => {
 		    body: JSON.stringify({
 				  title: postTitle,
 				  image: postImage,
+					content: postContent,
 				  date: postDate,
 				  tags: postTags,
 				}),
@@ -64,6 +66,7 @@ const Admin = (props) => {
 			<div className='mt-5 flex flex-col'>
 				<input type='file' onChange={(e)=>{ const reader = new FileReader(); reader.addEventListener('load', () => { if (reader.result !== null) { setPostImage(`${reader.result}`) } }); reader.readAsDataURL(e.target.files[0])}} id='postImage' className='m-2 w-fit hidden' />
 				<input type='text' value={postTitle} onChange={(e)=>{setPostTitle(e.target.value)}} id='PostHeading' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='PostHeading' /> 
+				<input type='text' value={postContent} onChange={(e)=>{setPostContent(e.target.value)}} id='postcontent' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='PostDate'  />
 				<input type='text' value={postDate} onChange={(e)=>{setPostDate(e.target.value)}} id='postdate' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='PostDate'  />
 				<input type='text' value={postTags} onChange={(e)=>{setPostTags(e.target.value)}} id='posttags' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='posttags'  />
 				<label htmlFor='postImage' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit '>Upload Image</label>

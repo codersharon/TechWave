@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "pages/api/getpost.ts\\": [
+      {
+        "id": "55adcd79-2103-4a2b-a17c-ceb44326fa08",
+        "line": 1,
+        "version": 0,
+        "index": 0
+      }
+    ]
+  }
 }

@@ -6,16 +6,16 @@ import Image from "next/image"
 const Slug = (props) => {
 	const [title, setTitle] = useState(props.data.title);
 	const [date, setDate] = useState(props.data.date);
-	const [content, setContent] = useState(props.data.content);
+	const [content, setContent] = useState(props.data.content? props.data.content : "");
 	const [image, setImage] = useState(props.data.image);
 	
 	return <>
 		<NextSeo
       title={title? title: "title || TechWave"}
       description={content.slice(0, 60)}
-      canonical={`https://techwave.sharonsandeep.repl.co/blogpost/${props.i}`}
+      canonical={`https://techwave.sharonsandeep.repl.co/blogpost/posts/${props.i}`}
 			      openGraph={{
-        url: `https://techwave.sharonsandeep.repl.co/blogpost/${props.i}`,
+        url: `https://techwave.sharonsandeep.repl.co/blogpost/posts/${props.i}`,
 				title: title,
       	description: content.slice(0, 60),
         images: [
@@ -38,7 +38,7 @@ const Slug = (props) => {
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;
-	const a = await fetch(`https://techwave.sharonsandeep.repl.co/api/gethow?id=${slug}`, { method: "GET" })
+	const a = await fetch(`https://techwave.sharonsandeep.repl.co/api/getpost?id=${slug}`, { method: "GET" })
 	 const data = await a.json();
 
 

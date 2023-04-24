@@ -34,7 +34,7 @@ const Home: NextPage = (props) => {
 				<div id='latestPosts' >{
 					posts.map((post)=>{
 						return (
-							<PostItem key={post._id} id={post._id} image={post.image} title={post.title} date={post.date} />
+							<PostItem key={post._id} id={post._id} image={post.image} title={post.title} content={post.content? post.content: ""} date={post.date} />
 						)
 					})
 				}</div>
