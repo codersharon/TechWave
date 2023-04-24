@@ -26,7 +26,7 @@ const Home: NextPage = (props) => {
 		/*/}</div>
 		
 		<div className='flex item-center justify-center w-full min-h-[100vh] bg-gray-100'>
-			<div className='w-[780px] text-center bg-white'>
+			<div className='w-[100vw] text-center bg-white'>
 				<div className='mx-2 border-b-blue-600 border-b-4'>
 					<h1 className='font-bold text-2xl cursor-default'>Posts</h1>
 				</div>
