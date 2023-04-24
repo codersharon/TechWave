@@ -14,7 +14,7 @@ const handler = async (req, res) => {
 		let posts = await Post.findByIdAndDelete(req.query.id);
 		res.status(200).json({ posts });
 	} else if (req.method == "GET") {
-		const posts = await Post.find();
+		const posts = await Post.find().sort({_id:-1});
 		res.status(200).json({ posts })
 	} else if (req.method == "POST") {
 		const post = new Post({

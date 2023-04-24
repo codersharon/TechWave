@@ -1,6 +1,5 @@
 import connectToDB from './mongodb/db'
 import Websites from './mongodb/models/websites'
-// import NextCors from 'nextjs-cors';
 
 export const config = {
   api: {
@@ -11,17 +10,11 @@ export const config = {
 }
 
 async function handler(req, res) {
-   //   await NextCors(req, res, {
-   //    // Options
-   //    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-   //    origin: '*',
-   //    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-   // });
 	if (req.method == "DELETE") {
 		let website = await Websites.findByIdAndDelete(req.query.id);
 		res.status(200).json({ website });
 	} else if (req.method == "GET") {
-		const websites = await Websites.find();
+		const websites = await Websites.find().sort({_id:-1});
 		res.status(200).json({ websites })
 	} else if (req.method == "POST") {
 		const website = new Websites({

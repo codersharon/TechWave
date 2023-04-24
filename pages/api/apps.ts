@@ -1,7 +1,6 @@
 /* eslint-disable */
 import Apps from './mongodb/models/apps'
 import connectToDB from './mongodb/db'
-// import NextCors from 'nextjs-cors';
 
 export const config = {
   api: {
@@ -12,17 +11,11 @@ export const config = {
 }
 
 async function handler(req, res) {
-   //   await NextCors(req, res, {
-   //    // Options
-   //    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-   //    origin: '*',
-   //    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-   // });
 	if (req.method == "DELETE") {
 		let app = await Apps.findByIdAndDelete(req.query.id);
 		res.status(200).json({ app });
 	} else if (req.method == "GET") {
-		const apps = await Apps.find();
+		const apps = await Apps.find().sort({_id:-1});;
 		res.status(200).json({ apps })
 	} else if (req.method == "POST") {
 		const app = new Apps({

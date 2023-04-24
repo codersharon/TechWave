@@ -1,6 +1,5 @@
 import connectToDB from './mongodb/db'
 import HowTo from './mongodb/models/how-to'
-// import NextCors from 'nextjs-cors';
 
 export const config = {
   api: {
@@ -11,17 +10,11 @@ export const config = {
 }
 
 async function handler(req, res) {
-   //   await NextCors(req, res, {
-   //    // Options
-   //    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-   //    origin: '*',
-   //    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-   // });
 	if (req.method == "DELETE") {
 		let howto = await HowTo.findByIdAndDelete(req.query.id);
 		res.status(200).json({ howto });
 	} else if (req.method == "GET") {
-		const howto = await HowTo.find();
+		const howto = await HowTo.find().sort({_id:-1});
 		res.status(200).json({ howto })
 	} else if (req.method == "POST") {
 		const howto = new HowTo({
