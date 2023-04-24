@@ -17,7 +17,7 @@ const PostItem = (props) => {
 				<Image src={image? image: "/no.webp"} height={'240px'} width={'320px'} className='rounded-xl mx-2'/>
 				<div className='border-l-2 border-black flex flex-col items-start justify-center'>
 					<h2 className='font-bold text-3xl mx-2 mt-5'>{title}</h2>
-					<p className='font-bold text-3xl mx-2 mt-5'>{content? content : ""}</p>
+					<p className='font-bold text-3xl mx-2 mt-5'>{content? content.slice(0, 45)+"...." : ""}</p>
 					<p className='mt font-semibold mx-[32px]'>{date}</p>
 				</div>
 			</div>
