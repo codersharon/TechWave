@@ -79,7 +79,7 @@ const Admin = (props) => {
 				<div id='latestPosts' >{
 					all.map((post)=>{
 						return <>
-							<PostItem key={post._id} id={post._id} image={post.image} title={post.title} date={post.date} />
+							<PostItem key={post._id} id={post._id} image={post.image? post.image : "/no.webp"} title={post.title} content={post.content} date={post.date} />
 						</>
 					})
 				}</div>

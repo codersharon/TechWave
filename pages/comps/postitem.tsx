@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const PostItem = (props) => {
-	const [ image, setImage ] = useState(props.image);
+	const [ image, setImage ] = useState(props.image? props.image : "/no.webp");
 	const [ title, setTitle ] = useState(props.title);
 	const [ content, setContent ] = useState(props.content? props.content : "");
   const [ date, setDate ] = useState(props.date);

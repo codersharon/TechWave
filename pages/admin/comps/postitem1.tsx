@@ -4,9 +4,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const PostItem = (props) => {
-	const [ imge, setImge ] = useState(props.image);
+	const [ image, setImage ] = useState(props.image);
   const [ date, setDate ] = useState(props.date);
 	const [ title, setTitle ] = useState(props.title);
+	const [ content, setContent ] = useState(props.content)
 	const [ id, setId ] = useState(props.id);
 	const deletePost = async (id) => {
 		const url = `/api/post?id=${id}`;
