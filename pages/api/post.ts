@@ -1,9 +1,8 @@
-import connectToDB from '../mongodb/db'
-import Post from '../mongodb/models/post'
+import connectToDB from './mongodb/db'
+import Post from './mongodb/models/post'
 
 const handler = async (req, res) => {
 	if(req.method == "DELETE") {
-		console.log(req.query)
 		let posts = await Post.findByIdAndDelete(req.query.id);
     res.status(200).json({ posts });
 	} else if(req.method == "GET") {
