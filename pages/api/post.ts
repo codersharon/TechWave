@@ -19,6 +19,7 @@ const handler = async (req, res) => {
 	} else if (req.method == "POST") {
 		const post = new Post({
 			title: req.body.title,
+			content: req.body.content,
 			image: req.body.image,
 			date: req.body.date,
 			tags: req.body.tags,
