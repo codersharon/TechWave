@@ -45,7 +45,7 @@ const HowTo = (props) => {
 		alert('Post maded in succesfully!');
 	};
 	const getAll = async () => {
-		const url = 'https://techwave.sharonsandeep.repl.co/api/how-to';
+		const url = '/api/how-to';
 		
 		const response = await fetch(url, { method: 'GET' });		
 		const text = await response.json();

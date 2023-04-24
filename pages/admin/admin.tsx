@@ -11,19 +11,16 @@ const Admin = (props) => {
 	const [ postTitle, setPostTitle ] = useState("");
 	const [ postDate, setPostDate ] = useState("");
 	const [ postTags, setPostTags ] = useState("");
+	const [ all, setAll ] = useState([0])
 	const [ adminID, setAdminID ] = useState(props.data[0].adid);
 	const [ adminPass, setAdminPass ] = useState(props.data[0].pass);
-	const [ all, setAll ] = useState([0])
-
+	
 	useEffect(()=>{
 		if (localStorage.getItem('adminID') == null) {
 			router.push('/admin/login');
 		} else if (localStorage.getItem('adminID') == adminID) {
 			router.push('/admin/admin');
-		} else if (localStorage.getItem('adminID') == "true") {
-			router.push('/admin/admin');
-			localStorage.removeItem('adminID')
-		}
+		} 
 	}, [0]);
 	
 	const SubmitPost = async () => {		
@@ -78,9 +75,9 @@ const Admin = (props) => {
 			<h1 className='mx-2 my-2 text-3xl border-b-2 border-black w-fit'>Posts</h1>
 				<div id='latestPosts' >{
 					all.map((post)=>{
-						return (
+						return <>
 							<PostItem key={post._id} id={post._id} image={post.image} title={post.title} date={post.date} />
-						)
+						</>
 					})
 				}</div>
 				</div>
@@ -91,7 +88,7 @@ const Admin = (props) => {
 export async function getServerSideProps(context) {
 	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/admin', { method: "GET" })
 	const data = await a.json();
-
+	
 	return {
 	  props: {data}
 	}

@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Nav from "./comps/nav";
 import WebsiteItem from "./comps/websiteitem1";
 
-const Websites = () => {
+const Websites = (props) => {
 	const router = useRouter();
 	const [ title, setTitle ] = useState("");
 	const [ content, setContent ] = useState("");
@@ -19,7 +19,7 @@ const Websites = () => {
 		if (localStorage.getItem('adminID') == null) {
 			router.push('/admin/login');
 		} else if (localStorage.getItem('adminID') == adminID) {
-			router.push('/admin/webstes');
+			router.push('/admin/websites');
 		}
 	}, [0]);
 	
@@ -43,7 +43,7 @@ const Websites = () => {
 		alert('Post maded in succesfully!');
 	};
 			const getAll = async () => {
-		const url = 'https://techwave.sharonsandeep.repl.co/api/website';
+		const url = '/api/website';
 		
 		const response = await fetch(url, { method: 'GET' });		
 		const text = await response.json();

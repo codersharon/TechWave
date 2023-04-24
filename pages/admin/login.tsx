@@ -16,9 +16,7 @@ const Login = (props) => {
 	
 	const handleSubmit = () => {
 		if (id == adminEmail && pass == adminPass) {
-			if (saveLogin == true) {
-				localStorage.setItem('adminID', adminID);
-			}
+			localStorage.setItem('adminID', adminID);
 			alert('Admin Logged in succesfully!');
 			router.push('/admin/admin');
 		}

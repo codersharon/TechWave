@@ -25,7 +25,7 @@ const Apps = (props) => {
 	}, [0]);
 	
 	const SubmitPost = async () => {		
-		const url = 'https://techwave.sharonsandeep.repl.co/api/apps';
+		const url = '/api/apps';
 		
 		const response = await fetch(url, {
 		    method: 'POST',
@@ -45,7 +45,7 @@ const Apps = (props) => {
 		alert('Post maded in succesfully!');
 	};
 		const getAll = async () => {
-		const url = 'https://techwave.sharonsandeep.repl.co/api/apps';
+		const url = '/api/apps';
 		
 		const response = await fetch(url, { method: 'GET' });		
 		const text = await response.json();
