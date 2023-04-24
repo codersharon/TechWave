@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
-const PostSchema = new mongoose.Schema({
+const HowToSchema = new mongoose.Schema({
 	title: { type: String, required: true},
+	content: { type: String, required: false },
 	image: { type: String, required: false },
 	date: { type: String, required: true },
 	tags: { type: Array, required: true },
@@ -9,6 +10,6 @@ const PostSchema = new mongoose.Schema({
 
 mongoose.models = {}
 
-const Post = mongoose.model('Post', PostSchema);
+const HowTo = mongoose.model('HowTo', HowToSchema);
 
-export default Post;
+export default HowTo;
