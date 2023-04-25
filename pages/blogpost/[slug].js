@@ -13,18 +13,18 @@ const Slug = (props) => {
 		<NextSeo
       title={title? title: "title || TechWave"}
       description={content.slice(0, 60)}
-      canonical={`https://techwave.sharonsandeep.repl.co/blogpost/${props.i}`}
-			      openGraph={{
+      canonical={`https://techwave.sharonsandeep.repl.co/`}
+			openGraph={{
         url: `https://techwave.sharonsandeep.repl.co/blogpost/${props.i}`,
 				title: title,
       	description: content.slice(0, 60),
-        images: [
-          { url: image },]}}
+        images: [{
+					url: "/favicon.ico",
+					width: 800,
+			    height: 600
+				}]}
+			}
     />
-		<Head>
-			<title>{title + " " + "|| TechWave"}</title>
-			<meta name="description" content={content} />
-		</Head>
 		<div style={{ margin: "0% 12px" }}>
 			<Image src={image? image : "/no.webp"} width={'320px'} height={'240px'} alt="image" className='rounded-xl mx-2'/>
 			<h1 style={{ fontSize: "xx-large", font: "bolder" }}>{title? title : "title"}</h1>

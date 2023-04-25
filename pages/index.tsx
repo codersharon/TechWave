@@ -9,7 +9,7 @@ const Home: NextPage = (props) => {
 
   return <>
 		<NextSeo
-      title="TechWave"
+      title={"TechWave"}
       description="Online Tech guid, news, tech tricks and tips"
       canonical="https://techwave.sharonsandeep.repl.co"
     />

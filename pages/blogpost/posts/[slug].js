@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Head from "next/head"
 import { NextSeo } from 'next-seo';
 import Image from "next/image"
 
@@ -18,13 +17,13 @@ const Slug = (props) => {
         url: `https://techwave.sharonsandeep.repl.co/blogpost/posts/${props.i}`,
 				title: title,
       	description: content.slice(0, 60),
-        images: [
-          { url: image },]}}
+				images: [{
+					url: "/favicon.ico",
+					width: 800,
+			    height: 600
+				}]}
+			}
     />
-		<Head>
-			<title>{title + " " + "|| TechWave"}</title>
-			<meta name="description" content={content} />
-		</Head>
 		<div style={{ margin: "0% 12px" }}>
 			<Image src={image? image : "/no.webp"} width={'320px'} height={'240px'} alt="image" className='rounded-xl mx-2'/>
 			<h1 style={{ fontSize: "xx-large", font: "bolder" }}>{title? title : "title"}</h1>

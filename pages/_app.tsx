@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 			setProgress(400);
 		});
 	});
-	
+
   return <>
 		  <LoadingBar
         color='red'
