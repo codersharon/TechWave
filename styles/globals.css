@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (min-width: 0px) and (max-width: 640px) {
+	body {
+		width: fit-content;
+	}
+}
+
+body{
+	overflow-x: hidden;
+}

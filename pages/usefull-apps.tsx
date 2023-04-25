@@ -15,13 +15,13 @@ const Apps = (props) => {
 		<Head>
 			<title>TechWave || Usefull Apps</title>
 		</Head>
-		<div className='flex item-center justify-center w-full min-h-[100vh] bg-gray-100'>
-			<div className='w-full text-center bg-white'>
+		<div className='flex item-center justify-center lg:w-full sm:w-fit min-h-[100vh] bg-gray-100'>
+			<div className='sm:w-fit lg:w-full text-center bg-white'>
 				<div className='mx-2 border-b-blue-600 border-b-4'>
 					<h1 className='font-bold text-2xl cursor-default'>Usefull Apss</h1>
 				</div>
 
-				<div className="w-fit">{
+				<div className="sm:w-fit lg:w-full sm:px-14">{
 					apps.map((item)=>{
 						return(
 							<AppsItem key={item._id} id={item._id} content={item.content} title={item.title} image={item.image} link={item.link} />

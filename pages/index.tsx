@@ -25,13 +25,13 @@ const Home: NextPage = (props) => {
 				</div>
 		/*/}</div>
 		
-		<div className='flex item-center justify-center w-full min-h-[100vh] bg-gray-100'>
-			<div className='w-[100vw] text-center bg-white'>
+		<div className='w-full flex item-center justify-center min-h-[100vh] bg-gray-100'>
+			<div className='text-center bg-white'>
 				<div className='mx-2 border-b-blue-600 border-b-4'>
 					<h1 className='font-bold text-2xl cursor-default'>Posts</h1>
 				</div>
 				
-				<div id='latestPosts' >{
+				<div className='' id='latestPosts' >{
 					posts.map((post)=>{
 						return (
 							<PostItem key={post._id} id={post._id} image={post.image} title={post.title} content={post.content? post.content: ""} date={post.date} />

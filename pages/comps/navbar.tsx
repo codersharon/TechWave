@@ -21,8 +21,7 @@ const Navbar = () => {
 				<Link href={'/usefull-websites/'}><li className={router.pathname == '/usefull-websites'?`bg-white text-black p-2 rounded hover:text-black mx-2 cursor-pointer`: `p-2 rounded hover:bg-white hover:text-black mx-2 cursor-pointer`}>Usefull Websites</li></Link>
 				<Link href={'/usefull-apps/'}><li className={router.pathname == '/usefull-apps'?`bg-white text-black p-2 rounded hover:text-black mx-2 cursor-pointer`: `p-2 rounded hover:bg-white hover:text-black mx-2 cursor-pointer`}>Usefull Apps</li></Link>
 			</ul>
-			<ul>{
-				admin == true ? <div><Link href={'/admin/admin'}><button className='cursor-pointer bg-red-600 hover:bg-red-700 text-white p-2 mx-5 rounded-xl'>Admin</button></Link> <button onClick={(e)=>{ localStorage.removeItem('adminID'); location.reload()}} className='cursor-pointer bg-red-600 hover:bg-red-700 text-white p-2 mx-5 rounded-xl'>Logout</button></div>: <Link href={'/admin/admin'}><button className='cursor-pointer bg-red-600 hover:bg-red-700 text-white p-2 mx-5 rounded-xl'>Admin</button></Link>}</ul>
+			<ul className='flex items-center justify-center'><Link href={'/admin/admin'}><button className='cursor-pointer bg-red-600 hover:bg-red-700 text-white p-2 mx-5 rounded-xl'>Admin</button></Link></ul>
 		</nav>
 	</>
 }
