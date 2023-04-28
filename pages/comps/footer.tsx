@@ -1,4 +1,5 @@
 /* eslint-disable */
+import Link from "next/link"
 
 const Footer = () => {
 	return <>
@@ -9,6 +10,9 @@ const Footer = () => {
     </a>
     <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
       <a href="https://github.com/codersharon" className="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@codersharon</a>
+    </p>
+    <p className="cursor-pointer text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+      <Link href={'/about'}>About me</Link>
     </p>
     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
       <a href="https://www.instagram.com/_sh.xron._/" target="_blank" rel="noreferrer" className="ml-3 text-gray-400">
