@@ -1,5 +1,10 @@
+import Head from 'next/head'
+
 const About = () => {
 	return <>
+		<Head>
+			<title>TechWave || About Me</title>
+		</Head>
 <section className="text-gray-400 bg-gray-900 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
