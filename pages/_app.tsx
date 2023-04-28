@@ -5,7 +5,7 @@ import LoadingBar from 'react-top-loading-bar'
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Footer from "./comps/footer"
-
+import LoadingLogo from './comps/loadinglogo'
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(0)
 	const router = useRouter()
@@ -27,9 +27,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 				waitingTime={1000}
         onLoaderFinished={() => setProgress(0)}
       />
-		<Navbar />
-		<Component {...pageProps} />
-		<Footer />
+			<LoadingLogo />
+			<Navbar />
+			<Component {...pageProps} />
+			<Footer />
 	</>
 		
 }

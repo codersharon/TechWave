@@ -29,7 +29,7 @@ const TechNews = (props) => {
 			<InfiniteScroll
         dataLength={page * 10}
         next={getMore}
-        hasMore={articles.length !== 100}
+        hasMore={articles.length !== props.data.totalResults}
         loader={<h1>loading...</h1>}
 				endMessage={<h1>News finished</h1>}>
 				{

@@ -15,7 +15,7 @@ const Navbar = () => {
 	return <>
 		<nav className='bg-black text-white flex items-center justify-between sticky top-0 z-10'>
 			<ul className='flex items-center justify-start p-5'>
-				<Link href={'/'}><span className='font-bolder text-3xl cursor-default mr-5'>TechWave</span></Link>
+				<Link href={'/'}><div className='bg-white'><div className='cursor-default border-2 border-white text-2xl font-bold flex items-center justify-center bg-black'><h1 className='p-2 px-5 border-2 border-black bg-white text-black'>Tech</h1><h1 className='p-2 text-white'>Wave</h1></div></div></Link>
 				<Link href={'/tech-news/'}><li className={router.pathname == '/tech-news'?`bg-white text-black p-2 rounded hover:text-black mx-2 cursor-pointer`: `p-2 rounded hover:bg-white hover:text-black mx-2 cursor-pointer`}>Tech News</li></Link>
 				<Link href={'/how-to/'}><li className={router.pathname == '/how-to'?`bg-white text-black p-2 rounded hover:text-black mx-2 cursor-pointer`: `p-2 rounded hover:bg-white hover:text-black mx-2 cursor-pointer`}>How to </li></Link>
 				<Link href={'/usefull-websites/'}><li className={router.pathname == '/usefull-websites'?`bg-white text-black p-2 rounded hover:text-black mx-2 cursor-pointer`: `p-2 rounded hover:bg-white hover:text-black mx-2 cursor-pointer`}>Usefull Websites</li></Link>
