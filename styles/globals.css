@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	padding: 0%;
+	margin: 0%;
+}
+
 @media (min-width: 0px) and (max-width: 640px) {
 	body {
-		width: fit-content;
+		width: 100%;
 	}
 }
 

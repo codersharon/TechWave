@@ -5,7 +5,7 @@ const About = () => {
 		<Head>
 			<title>TechWave || About Me</title>
 		</Head>
-<section className="text-gray-400 bg-gray-900 body-font">
+<section className="sm:w-full text-gray-400 bg-gray-900 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
       <p className="leading-relaxed text-lg">Welcome to my website! I'm a passionate and experienced full-stack web developer specialising in the MERN stack and Next.js. With a deep understanding of both front-end and back-end technologies, I strive to create innovative and efficient web solutions.
