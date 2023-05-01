@@ -7,7 +7,22 @@ const Slug = (props) => {
 	const [date, setDate] = useState(props.data.date);
 	const [content, setContent] = useState(props.data.content? props.data.content : "");
 	const [image, setImage] = useState(props.data.image);
-	
+	const [ likes, setLikes ] = useState(props.data.likes);
+	const [ liked, setLiked ] = useState(false)
+		const handleLike = async () => {
+		if (liked == false) {
+			const request = await fetch(`/api/post/liked?id=${id}`, { method: 'PUT' });
+			const response = await request.json();
+			setLiked(true);
+			setLikes(likes+1)
+		} else if (liked == true) {
+			const request = await fetch(`/api/post/unliked?id=${id}`, { method: 'PUT' });
+			const response = await request.json();
+			setLiked(false);
+			setLikes(likes-1)
+		}
+		setLiked(true);
+	}
 	return <>
 		<NextSeo
       title={title? title: "title || TechWave"}
@@ -30,6 +45,7 @@ const Slug = (props) => {
 			<hr></hr>
 			<p styles={{ fontSize: "x-large" }}>{content? content : "content"}</p>
 			<p styles={{ fontSize: "large" }}>{date? date : "date"}</p>
+			<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={(e)=>{handleLike}} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 		</div>
 	</>
 	

@@ -20,17 +20,17 @@ const Home: NextPage = (props) => {
 		</Head>
 		<div className='flex items-center justify-center'>
 			<div className='cursor-pointer bg-black text-white text-xl font-bold'>
-				<img src={news[0].urlToImage?news[0].urlToImage: "/no.webp"} className='w-[720px] h-[480px]' />
+				<img src={news[0].urlToImage? news[0].urlToImage: "/no.webp"} className='w-[720px] h-[480px]' />
 				<a href={news[0].url} target="_black" className='p-2 border-r-2 border-r-white flex items-center justify-start'>{news[0].title?news[0].title:"not title available"}</a>
 			</div>
 
 			<div className='cursor-pointer bg-black text-white text-xl font-bold'>
-				<img src={news[1].urlToImage?news[1].urlToImage: "/no.webp"} className='w-[720px] h-[480px]' />
+				<img src={news[1].urlToImage? news[1].urlToImage: "/no.webp"} className='w-[720px] h-[480px]' />
 				<a href={news[1].url} target="_black" className='p-2 border-r-2 border-r-white flex items-center justify-start'>{news[1].title?news[1].title:"not title available"}</a>
 			</div>
 
 			<div className='cursor-pointer bg-black text-white text-xl font-bold'>
-				<img src={news[2].urlToImage?news[2].urlToImage: "/no.webp"} className='w-[720px] h-[480px]' />
+				<img src={news[2].urlToImage? news[2].urlToImage: "/no.webp"} className='w-[720px] h-[480px]' />
 				<a href={news[2].url} target="_black" className='p-2 border-r-2 border-r-white flex items-center justify-start'>{news[2].title?news[2].title:"not title available"}</a>
 			</div>
 		</div>
@@ -44,7 +44,7 @@ const Home: NextPage = (props) => {
 				<div className='' id='latestPosts' >{
 					posts.map((post)=>{
 						return (
-							<PostItem key={post._id} id={post._id} image={post.image} title={post.title} content={post.content? post.content: ""} date={post.date} />
+							<PostItem key={post._id} id={post._id} image={post.image} likes={post.likes} title={post.title} content={post.content? post.content: ""} date={post.date} />
 						)
 					})
 				}</div>
@@ -57,7 +57,7 @@ const Home: NextPage = (props) => {
 export async function getServerSideProps(context) {
 	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/post', { method: "GET" })
 	const data = await a.json();
-	const b = await fetch('https://techwave.sharonsandeep.repl.co/api/news', { method: "POST" })
+	const b = await fetch('https://techwave.sharonsandeep.repl.co/api/news?page=1?size=3', { method: "POST" })
 	const news = await b.json();
 	
 	return {

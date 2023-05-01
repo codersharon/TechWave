@@ -77,7 +77,7 @@ const HowTo = (props) => {
 				<div id='latestPosts' >{
 					all.map((post)=>{
 						return (
-							<HowToItem key={post._id} id={post._id} image={post.image} title={post.title} content={post.content} date={post.date} />
+							<HowToItem key={post._id} id={post._id} likes={post.likes} image={post.image} title={post.title} content={post.content} date={post.date} />
 						)
 					})
 				}</div>

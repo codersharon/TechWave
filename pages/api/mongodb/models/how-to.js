@@ -6,6 +6,7 @@ const HowToSchema = new mongoose.Schema({
 	image: { type: String, required: false },
 	date: { type: String, required: true },
 	tags: { type: Array, required: true },
+	likes: { type: Number, required: true }
 });
 
 mongoose.models = {}

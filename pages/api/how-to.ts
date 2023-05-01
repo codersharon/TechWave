@@ -23,16 +23,8 @@ async function handler(req, res) {
 			image: req.body.image,
 			date: req.body.date,
 			tags: req.body.tags,
+			likes: 0,
 		});
-
-		// 		{
-		//   "title": "req.body.title",
-		//   "content": "req.body.title",
-		//   "image": "req.body.image",
-		//   "date": "req.body.date",
-		//   "post": "req.body.post",
-		//   "tags": "req.body.tags"
-		// }
 
 		howto.save();
 

@@ -23,11 +23,12 @@ const handler = async (req, res) => {
 			image: req.body.image,
 			date: req.body.date,
 			tags: req.body.tags,
+			likes: "0",
 		});
 		
 		post.save();
 
-		res.status(200).json( {success: true} )
+		res.status(200).json( {success: true} );
 	} else {
 		res.status(404);
 	}

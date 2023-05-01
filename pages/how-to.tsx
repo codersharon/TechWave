@@ -22,7 +22,7 @@ const HowTo = (props) => {
 				<div>{
 					howto.map((item)=>{
 						return(
-							<HowToItem key={item._id} id={item._id} content={item.content} title={item.title} image={item.image} date={item.date} />
+							<HowToItem key={item._id} id={item._id} content={item.content} likes={item.likes} title={item.title} image={item.image} date={item.date} />
 							)
 					})
 				}</div>
