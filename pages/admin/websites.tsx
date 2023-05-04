@@ -82,7 +82,7 @@ const Websites = (props) => {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/admin', { method: "GET" })
 	const data = await a.json();
 

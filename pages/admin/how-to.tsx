@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from "next/router";
@@ -86,7 +85,7 @@ const HowTo = (props) => {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/admin', { method: "GET" })
 	const data = await a.json();
 

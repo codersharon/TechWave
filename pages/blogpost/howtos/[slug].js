@@ -52,12 +52,23 @@ const Slug = (props) => {
 	
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+	const ab = await fetch('https://techwave.sharonsandeep.repl.co/api/how-to')
+	const howtos = await ab.json();
+  const paths = howtos.howto.map((item) => {
+		return { params: { slug: item._id } }
+	})
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps(context) {
   const { slug } = context.params;
 	const a = await fetch(`https://techwave.sharonsandeep.repl.co/api/gethow?id=${slug}`, { method: "GET" })
-	 const data = await a.json();
-
-
+  const data = await a.json();
+	
   return {
     props: {data, i: slug}
   }

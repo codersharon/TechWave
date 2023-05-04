@@ -1,7 +1,6 @@
-/* eslint-disable */
 import { useState } from 'react'
 
-const NewsItem = (props) => {
+const NewsItem = (props: any) => {
 	const [img, setImg] = useState(props.img);
 	const [desc, setDesc] = useState(props.desc);
 	const [title, setTitle] = useState(props.title);
@@ -18,8 +17,8 @@ const NewsItem = (props) => {
 			<p>publised at: {date}</p>
 			<p>author: {auth}</p>
 			<p>source: {source}</p>
-			<p className='font-bold text-lg'>News by <a className='hover:underline' target='_blank' href='https://newsapi.org'>NewsAPI</a></p>
-			<button className='ml-[66%]'><a href={url} target='_blank' className='bg-white text-black hover:text-white border-2 hover:border-white hover:bg-black p-2 mx-2 mt-5 rounded-lg'>Read More</a></button>
+			<p className='font-bold text-lg'>News by <a className='hover:underline' target='_blank' rel="noreferrer" href='https://newsapi.org'>NewsAPI</a></p>
+			<button className='ml-[66%]'><a href={url} target='_blank' rel="noreferrer" className='bg-white text-black hover:text-white border-2 hover:border-white hover:bg-black p-2 mx-2 mt-5 rounded-lg'>Read More</a></button>
 		</div>
 	</>
 }

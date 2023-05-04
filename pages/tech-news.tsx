@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState } from "react";
 import NewsItem from './comps/newsitem'
 import InfiniteScroll from "react-infinite-scroll-component"
@@ -43,7 +42,7 @@ const TechNews = (props) => {
 	</>
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 		const r = await fetch(`https://techwave.sharonsandeep.repl.co/api/news?page=${1}`, { method: "POST" });
 		const data = await r.json();
   return {

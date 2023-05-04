@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NextSeo } from 'next-seo';
-import Image from "next/image"
+// import Image from "next/image"
 
 const Slug = (props) => {
 	const [title, setTitle] = useState(props.data.title);
@@ -40,7 +40,7 @@ const Slug = (props) => {
 			}
     />
 		<div style={{ margin: "0% 12px" }}>
-			<Image src={image? image : "/no.webp"} width={'320px'} height={'240px'} alt="image" className='rounded-xl mx-2'/>
+			<img src={image? image : "/no.webp"} width={'320px'} height={'240px'} alt="image" className='rounded-xl mx-2'/>
 			<h1 style={{ fontSize: "xx-large", font: "bolder" }}>{title? title : "title"}</h1>
 			<hr></hr>
 			<p styles={{ fontSize: "x-large" }}>{content? content : "content"}</p>
@@ -51,12 +51,24 @@ const Slug = (props) => {
 	
 }
 
-export async function getServerSideProps(context) {
+
+export async function getStaticPaths() {
+	const ab = await fetch('https://techwave.sharonsandeep.repl.co/api/post')
+	const posts = await ab.json();
+  const paths = posts.posts.map((post) => {
+		return { params: { slug: post._id } }
+	})
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps(context) {
   const { slug } = context.params;
 	const a = await fetch(`https://techwave.sharonsandeep.repl.co/api/getpost?id=${slug}`, { method: "GET" })
-	 const data = await a.json();
-
-
+  const data = await a.json();
+	
   return {
     props: {data, i: slug}
   }

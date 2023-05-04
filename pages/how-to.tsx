@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import HowToItem from './comps/howtoitem'
 import Head from 'next/head'
@@ -31,7 +31,7 @@ const HowTo = (props) => {
 	</>
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/how-to', { method: "GET" })
 	 const data = await a.json();
 

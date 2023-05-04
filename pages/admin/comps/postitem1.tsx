@@ -1,10 +1,9 @@
-/* eslint-disable */
 import React from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
 
-const PostItem = (props) => {
+const PostItem = (props: any) => {
 	const [ image, setImage ] = useState(props.image);
   const [ date, setDate ] = useState(props.date);
   const [ likes, setLikes ] = useState(props.likes);
@@ -35,7 +34,7 @@ const PostItem = (props) => {
 	return <>
 			{content? 
 			<div key={id} className='sm:w-full m-2 cursor-pointer hover:bg-gray-100 flex lg:flex-row sm:flex-col item-center justify-start border-b-2 border-black p-5 rounded-lg'>
-				<Image src={image? image: "/no.webp"} height={'240px'} width={'320px'} className='rounded-xl mx-2'/>
+				<img src={image? image: "/no.webp"} height={'240px'} width={'320px'} className='rounded-xl mx-2'/>
 				<div className='lg:border-l-2 border-black lg:ml-2 flex flex-col items-start justify-center'>
 				<Link href={`/blogpost/posts/${id}`}>
 					<div>
@@ -49,7 +48,7 @@ const PostItem = (props) => {
 				</div>
 			</div> :
 			<div key={id} className='sm:w-full m-2 cursor-pointer hover:bg-gray-100 flex lg:flex-row sm:flex-col item-center justify-start border-b-2 border-black p-5 rounded-lg'>
-				<Image src={image? image: "/no.webp"} height={'240px'} width={'320px'} className='rounded-xl mx-2'/>
+				<img src={image? image: "/no.webp"} height={'240px'} width={'320px'} className='rounded-xl mx-2'/>
 				<div className='lg:border-l-2 border-black lg:ml-2 flex flex-col items-start justify-center'>
 					<h2 className='font-bold text-xl mx-2 mt-5'>{title}</h2>
 					<p className='font-semibold mx-[32px]'>{date}</p>

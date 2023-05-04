@@ -1,11 +1,10 @@
-/* eslint-disable */
-import React, { useState, useEffect } from 'react'
+ import React, { useState, useEffect } from 'react'
 import { useRouter } from "next/router"
 import Head from 'next/head';
 import Nav from "./comps/nav";
 import PostItem from "./comps/postitem1";
 
-const Admin = (props) => {
+const Admin = (props: any) => {
 	const router = useRouter();
 	const [ all, setAll ] = useState([0])
 	const [ postDate, setPostDate ] = useState("");
@@ -88,7 +87,7 @@ const Admin = (props) => {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/admin', { method: "GET" })
 	const data = await a.json();
 	

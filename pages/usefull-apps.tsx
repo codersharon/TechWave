@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useEffect, useState } from 'react';
 import AppsItem from './comps/appsitem';
 import Head from 'next/head'
@@ -34,7 +33,7 @@ const Apps = (props) => {
 	</>
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 		const r = await fetch(`https://techwave.sharonsandeep.repl.co/api/apps`, { method: "GET" });
 		const data = await r.json();
 

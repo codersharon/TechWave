@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const WebsiteItem = (props) => {
+const WebsiteItem = (props: any) => {
 	const [ title, setTitle ] = useState(props.title);
 	const [ content, setContent ] = useState(props.content);
 	const [ link, setLink ] = useState(props.link)

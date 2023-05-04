@@ -1,4 +1,3 @@
-/* eslint-disable */
 // import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import WebsiteItem from './comps/websiteitem'
@@ -33,7 +32,7 @@ const Websites = (props) => {
 	</>
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 		const r = await fetch(`https://techwave.sharonsandeep.repl.co/api/website`, { method: "GET" });
 		const data = await r.json();
 
