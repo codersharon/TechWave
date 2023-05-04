@@ -27,9 +27,9 @@ const Slug = (props) => {
 		<NextSeo
       title={title? title: "title || TechWave"}
       description={content.slice(0, 60)}
-      canonical={`https://techwave.sharonsandeep.repl.co/blogpost/posts/${props.i}`}
+      canonical={`https://tech-vave.vercel.app/blogpost/posts/${props.i}`}
 			      openGraph={{
-        url: `https://techwave.sharonsandeep.repl.co/blogpost/posts/${props.i}`,
+        url: `https://tech-vave.vercel.app/blogpost/posts/${props.i}`,
 				title: title,
       	description: content.slice(0, 60),
 				images: [{
@@ -53,7 +53,7 @@ const Slug = (props) => {
 
 
 export async function getStaticPaths() {
-	const ab = await fetch('https://techwave.sharonsandeep.repl.co/api/post')
+	const ab = await fetch('https://tech-vave.vercel.app/api/post')
 	const posts = await ab.json();
   const paths = posts.posts.map((post) => {
 		return { params: { slug: post._id } }

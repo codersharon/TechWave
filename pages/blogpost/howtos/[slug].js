@@ -28,9 +28,9 @@ const Slug = (props) => {
 		<NextSeo
       title={title? title: "title || TechWave"}
       description={content.slice(0, 60)}
-      canonical={`https://techwave.sharonsandeep.repl.co/`}
+      canonical={`https://tech-vave.vercel.app/`}
 			openGraph={{
-        url: `https://techwave.sharonsandeep.repl.co/blogpost/${props.i}`,
+        url: `https://tech-vave.vercel.app/blogpost/${props.i}`,
 				title: title,
       	description: content.slice(0, 60),
         images: [{

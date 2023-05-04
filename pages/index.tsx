@@ -14,7 +14,7 @@ const Home: NextPage = (props) => {
 		<NextSeo
       title={"TechWave"}
       description="Online Tech guid, news, tech tricks and tips"
-      canonical="https://techwave.sharonsandeep.repl.co"
+      canonical="https://tech-vave.vercel.app/"
     />
 		<Head>
 			<title>TechWave</title>
@@ -50,7 +50,7 @@ const Home: NextPage = (props) => {
 }
 
 export async function getStaticProps(context) {
-	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/post', { method: "GET" })
+	const a = await fetch('https://tech-vave.vercel.app/api/post', { method: "GET" })
 	const data = await a.json();
 	let r = await axios('https://newsapi.org/v2/top-headlines?country=in&category=technology&language=en&apiKey=' + mySecret2 +`&page=1&pageSize=3`);
 	let news = await r.data;
