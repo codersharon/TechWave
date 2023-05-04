@@ -10,7 +10,7 @@ const TechNews = (props) => {
 
 	
 	const getMore = async () => {
-		const r = await fetch(`https://techwave.sharonsandeep.repl.co/api/news?page=${page+1}`, { method: "POST" });
+		const r = await fetch(`/api/news?page=${page+1}`, { method: "POST" });
 		const a = await r.json();
 		setPage(page+1)
 		setArticles(articles.concat(a.articles));
