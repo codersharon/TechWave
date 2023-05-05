@@ -11,8 +11,8 @@ const TechNews = (props) => {
 
 	
 	const getMore = async () => {
-	let r = await axios('https://newsapi.org/v2/top-headlines?country=in&category=technology&language=en&apiKey=' + mySecret2 +`&page=${page+1}&pageSize=10`);
-	let a = await r.data;
+	let r = await fetch(`/api/news?page=${page+1}`, { method: "POST" });
+	let a = await r.json();
 		setPage(page+1)
 		setArticles(articles.concat(a.articles));
 	};
@@ -44,8 +44,8 @@ const TechNews = (props) => {
 }
 
 export async function getServerSideProps(context) {
-	let r = await axios('https://newsapi.org/v2/top-headlines?country=in&category=technology&language=en&apiKey=' + mySecret2 +`&page=1&pageSize=10`);
-	let a = await r.data;
+	let r = await fetch(`https://tech-vave.vercel.app/api/news?page=1`, { method: "POST" });
+	let data = await r.json();
   return {
     props: {data}
   }
