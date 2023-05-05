@@ -12,12 +12,12 @@ const Slug = (props) => {
 	const [ liked, setLiked ] = useState(false)
 	const handleLike = async () => {
 		if (liked == false) {
-			const request = await fetch(`/api/how-to/liked?id=${id}`, { method: 'PUT' });
+			const request = await fetch(`/api/how-to/liked?id=${props.i}`, { method: 'PUT' });
 			const response = await request.json();
 			setLiked(true);
 			setLikes(likes+1)
 		} else if (liked == true) {
-			const request = await fetch(`/api/how-to/unliked?id=${id}`, { method: 'PUT' });
+			const request = await fetch(`/api/how-to/unliked?id=${props.i}`, { method: 'PUT' });
 			const response = await request.json();
 			setLiked(false);
 			setLikes(likes-1)
@@ -66,14 +66,12 @@ const Slug = (props) => {
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;
-	const a = await fetch(`https://tech-wave.vercel.app/api/gethow?id=${slug}`, { method: "GET" })
+	const a = await fetch(`https://tech-vave.vercel.app/api/gethow?id=${slug}`, { method: "GET" })
   const data = await a.json();
 	
   return {
     props: {data, i: slug}
   }
 }
-
-export default Slug
 
 export default Slug
