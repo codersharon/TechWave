@@ -10,7 +10,7 @@ const HowTo = (props) => {
 	return <>
 		<NextSeo
       title="TechWave || How-To"
-      canonical="https://tec-vave.vercel.app/how-to"
+      canonical="https://tech-vave.vercel.app/how-to"
     />
 		<Head><title>TechWave || How-To</title></Head>
 		<div className='flex item-center justify-center w-full min-h-[100vh] bg-gray-100'>
