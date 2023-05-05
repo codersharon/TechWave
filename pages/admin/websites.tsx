@@ -11,7 +11,7 @@ const Websites = (props) => {
 	const [ content, setContent ] = useState("");
 	const [ link, setLink ] = useState("");
 	const [ tags, setTags ] = useState([]);
-	const [ adminID, setAdminID ] = useState(props.data[0].adid);
+	const [ adminID, setAdminID ] = useState(props.b[0].adid);
 	const [ adminPass, setAdminPass ] = useState(props.b[0].pass);
 	const [ all, setAll ] = useState(props.data.websites)
 
