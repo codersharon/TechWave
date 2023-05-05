@@ -49,7 +49,7 @@ const Home: NextPage = (props) => {
 	</>
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 	const a = await fetch('https://tech-vave.vercel.app/api/post', { method: "GET" })
 	const data = await a.json();
 	let r = await axios('https://newsapi.org/v2/top-headlines?country=in&category=technology&language=en&apiKey=' + mySecret2 +`&page=1&pageSize=3`);
