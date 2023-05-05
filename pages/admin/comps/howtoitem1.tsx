@@ -39,7 +39,7 @@ const HowToItem = (props: any) => {
 					<h2 className='font-bold text-3xl mx-2 mt-5'>{title}</h2>
 					<p className='font-bold text-xl mx-2 mt-5'>{content? content.slice(0, 45)+"...." : ""}</p>
 					<p className='mt font-semibold mx-[32px]'>{date}</p>
-					<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={(e)=>{handleLike}} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+					<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 					<button onClick={(e)=>{deletePost(id)}} className='bg-blue-600 hover:bg-blue-700 p-2 h-fit rounded-xl mx-2 text-white'>Delete</button>
 				</div>
 			</div>

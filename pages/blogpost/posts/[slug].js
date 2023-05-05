@@ -45,7 +45,7 @@ const Slug = (props) => {
 			<hr></hr>
 			<p styles={{ fontSize: "x-large" }}>{content? content : "content"}</p>
 			<p styles={{ fontSize: "large" }}>{date? date : "date"}</p>
-			<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={(e)=>{handleLike}} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+			<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 		</div>
 	</>
 	
@@ -66,7 +66,7 @@ const Slug = (props) => {
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;
-	const a = await fetch(`https://techwave.sharonsandeep.repl.co/api/getpost?id=${slug}`, { method: "GET" })
+	const a = await fetch(`https://tech-wave.vercel.app/api/getpost?id=${slug}`, { method: "GET" })
   const data = await a.json();
 	
   return {

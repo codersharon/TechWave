@@ -10,7 +10,7 @@ const Websites = (props) => {
 	return <>
 		<NextSeo
       title="TechWave || Usefull Websites"
-      canonical="https://techwave.sharonsandeep.repl.co/usefull-websites"
+      canonical="https://tech-vave.vercel.app/usefull-websites"
     />
 		<Head><title>TechWave || Usefull Websites</title></Head>
 		<div className='flex item-center justify-center w-full w-fit min-h-[100vh] bg-gray-100'>
@@ -32,11 +32,9 @@ const Websites = (props) => {
 	</>
 }
 
-export async function getStaticProps(context) {
-		const r = await fetch(`https://techwave.sharonsandeep.repl.co/api/website`, { method: "GET" });
-		const data = await r.json();
-
-
+export async function getServerSideProps(context) {
+	const r = await fetch(`https://tech-vave.vercel.app/api/website`, { method: "GET" });
+	const data = await r.json();
   return {
     props: {data}
   }

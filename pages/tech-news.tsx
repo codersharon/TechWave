@@ -3,6 +3,7 @@ import NewsItem from './comps/newsitem'
 import InfiniteScroll from "react-infinite-scroll-component"
 import Head from 'next/head'
 import { NextSeo } from 'next-seo';
+import axios from 'axios';
 
 const TechNews = (props) => {
 	const [ articles, setArticles ] = useState(props.data.articles);
@@ -10,8 +11,8 @@ const TechNews = (props) => {
 
 	
 	const getMore = async () => {
-		const r = await fetch(`/api/news?page=${page+1}`, { method: "POST" });
-		const a = await r.json();
+	let r = await axios('https://newsapi.org/v2/top-headlines?country=in&category=technology&language=en&apiKey=' + mySecret2 +`&page=${page+1}&pageSize=10`);
+	let a = await r.data;
 		setPage(page+1)
 		setArticles(articles.concat(a.articles));
 	};
@@ -19,7 +20,7 @@ const TechNews = (props) => {
 	return <>
 		<NextSeo
       title="TechWave || Tech News"
-      canonical="https://techwave.sharonsandeep.repl.co/tech-news"
+      canonical="https://tech-vave.vercel.app/tech-news"
     />
 		<Head>
 			<title>TechWave || Tech News</title>
@@ -42,9 +43,9 @@ const TechNews = (props) => {
 	</>
 }
 
-export async function getStaticProps(context) {
-		const r = await fetch(`https://techwave.sharonsandeep.repl.co/api/news?page=${1}`, { method: "POST" });
-		const data = await r.json();
+export async function getServerSideProps(context) {
+	let r = await axios('https://newsapi.org/v2/top-headlines?country=in&category=technology&language=en&apiKey=' + mySecret2 +`&page=1&pageSize=10`);
+	let a = await r.data;
   return {
     props: {data}
   }

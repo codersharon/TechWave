@@ -33,7 +33,7 @@ const PostItem = (props: any) => {
 					<h2 className='font-bold text-3xl mx-2 mt-5'>{title}</h2>
 					<p className='font-bold text-xl mx-2 mt-5'>{content? content.slice(0, 45)+"...." : ""}</p>
 					<p className='mt-2 font-semibold mx-[32px]'>{date}</p>
-					<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={(e)=>{handleLike}} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+					<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 				</div>
 			</div>
 		</Link> : 			
@@ -42,7 +42,7 @@ const PostItem = (props: any) => {
 				<div className='lg:border-l-2 border-black lg:ml-2 flex flex-col items-start justify-center'>
 					<h2 className='font-bold text-xl mx-2 mt-5'>{title}</h2>
 					<p className='mt font-semibold mx-[32px]'>{date}</p>
-					<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={(e)=>{handleLike}} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+					<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 				</div>
 			</div>}
 	</>

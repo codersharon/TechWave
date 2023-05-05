@@ -11,9 +11,9 @@ const Apps = (props) => {
 	const [ content, setContent ] = useState("");
 	const [ link, setLink ] = useState("");
 	const [ tags, setTags ] = useState([]);
-	const [ adminID, setAdminID ] = useState(props.data[0].adid);
-	const [ adminPass, setAdminPass ] = useState(props.data[0].pass);
-	const [ all, setAll ] = useState([0])
+	const [ adminID, setAdminID ] = useState(props.b[0].adid);
+	const [ adminPass, setAdminPass ] = useState(props.b[0].pass);
+	const [ all, setAll ] = useState(props.data.apps)
 
 	useEffect(()=>{
 		if (localStorage.getItem('adminID') == null) {
@@ -43,17 +43,7 @@ const Apps = (props) => {
 		const text = await response.json();
 		alert('Post maded in succesfully!');
 	};
-		const getAll = async () => {
-		const url = '/api/apps';
-		
-		const response = await fetch(url, { method: 'GET' });		
-		const text = await response.json();
-		setAll(text.apps);
-	}
 	
-	useEffect(()=>{
-		getAll()
-	}, [])
   return (
     <>
 		<Head>
@@ -85,12 +75,13 @@ const Apps = (props) => {
   )
 }
 
-export async function getStaticProps(context) {
-	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/admin', { method: "GET" })
-	const data = await a.json();
-
+export async function getServerSideProps(context) {
+	const a = await fetch('https://tech-vave.vercel.app/api/admin', { method: "GET" })
+	const b = await a.json();
+	const c = await fetch('https://tech-vave.vercel.app/api/apps', { method: "GET" })
+	const data = await c.json();
 	return {
-	  props: {data}
+	  props: {b, data}
 	}
 }
 export default Apps

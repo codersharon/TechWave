@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Head from "next/head"
 import { NextSeo } from 'next-seo';
-import Image from "next/image"
+// import Image from "next/image"
 
 const Slug = (props) => {
 	const [title, setTitle] = useState(props.data.title);
@@ -41,37 +41,39 @@ const Slug = (props) => {
 			}
     />
 		<div style={{ margin: "0% 12px" }}>
-			<Image src={image? image : "/no.webp"} width={'320px'} height={'240px'} alt="image" className='rounded-xl mx-2'/>
+			<img src={image? image : "/no.webp"} width={'320px'} height={'240px'} alt="image" className='rounded-xl mx-2'/>
 			<h1 style={{ fontSize: "xx-large", font: "bolder" }}>{title? title : "title"}</h1>
 			<hr></hr>
 			<p styles={{ fontSize: "x-large" }}>{content? content : "content"}</p>
 			<p styles={{ fontSize: "large" }}>{date? date : "date"}</p>
-			<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={(e)=>{handleLike}} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+			<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 		</div>
 	</>
 	
 }
 
-export async function getStaticPaths() {
-	const ab = await fetch('https://techwave.sharonsandeep.repl.co/api/how-to')
-	const howtos = await ab.json();
-  const paths = howtos.howto.map((item) => {
-		return { params: { slug: item._id } }
-	})
+// export async function getStaticPaths() {
+// 	const ab = await fetch('https://techwave.sharonsandeep.repl.co/api/how-to')
+// 	const howtos = await ab.json();
+//   const paths = howtos.howto.map((item) => {
+// 		return { params: { slug: item._id } }
+// 	})
 
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
-  return { paths, fallback: false }
-}
+//   // We'll pre-render only these paths at build time.
+//   // { fallback: false } means other routes should 404.
+//   return { paths, fallback: false }
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { slug } = context.params;
-	const a = await fetch(`https://techwave.sharonsandeep.repl.co/api/gethow?id=${slug}`, { method: "GET" })
+	const a = await fetch(`https://tech-wave.vercel.app/api/gethow?id=${slug}`, { method: "GET" })
   const data = await a.json();
 	
   return {
     props: {data, i: slug}
   }
 }
+
+export default Slug
 
 export default Slug

@@ -9,7 +9,7 @@ const Apps = (props) => {
   return <>
 		<NextSeo
       title="TechWave || Usefull Apps"
-      canonical="https://techwave.sharonsandeep.repl.co/usefull-apps"
+      canonical="https://tech-vave.vercel.app/usefull-apps"
     />
 		<Head>
 			<title>TechWave || Usefull Apps</title>
@@ -33,11 +33,9 @@ const Apps = (props) => {
 	</>
 }
 
-export async function getStaticProps(context) {
-		const r = await fetch(`https://techwave.sharonsandeep.repl.co/api/apps`, { method: "GET" });
-		const data = await r.json();
-
-
+export async function getServerSideProps(context) {
+	const r = await fetch(`https://tech-vave.vercel.app/api/apps`, { method: "GET" });
+	const data = await r.json();
   return {
     props: {data}
   }
