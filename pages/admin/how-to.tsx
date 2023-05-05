@@ -77,7 +77,7 @@ const HowTo = (props) => {
 
 export async function getServerSideProps(context) {
 	const a = await fetch('https://tech-vave.vercel.app/api/admin', { method: "GET" })
-	const data = await a.json();
+	const b = await a.json();
 	const c = await fetch('https://tech-vave.vercel.app/api/how-to', { method: "GET" })
 	const data = await c.json();
 

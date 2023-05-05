@@ -33,9 +33,7 @@ const HowTo = (props) => {
 
 export async function getServerSideProps(context) {
 	const a = await fetch('https://tech-vave.vercel.app/api/how-to', { method: "GET" })
-	 const data = await a.json();
-
-
+  const data = await a.json();
   return {
     props: {data}
   }
