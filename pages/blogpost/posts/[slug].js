@@ -52,19 +52,19 @@ const Slug = (props) => {
 }
 
 
-export async function getStaticPaths() {
-	const ab = await fetch('https://tech-vave.vercel.app/api/post')
-	const posts = await ab.json();
-  const paths = posts.posts.map((post) => {
-		return { params: { slug: post._id } }
-	})
+// export async function getStaticPaths() {
+// 	const ab = await fetch('https://tech-vave.vercel.app/api/post')
+// 	const posts = await ab.json();
+//   const paths = posts.posts.map((post) => {
+// 		return { params: { slug: post._id } }
+// 	})
 
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
-  return { paths, fallback: false }
-}
+//   // We'll pre-render only these paths at build time.
+//   // { fallback: false } means other routes should 404.
+//   return { paths, fallback: false }
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { slug } = context.params;
 	const a = await fetch(`https://techwave.sharonsandeep.repl.co/api/getpost?id=${slug}`, { method: "GET" })
   const data = await a.json();
