@@ -13,7 +13,7 @@ const Navbar = () => {
 		}
 	}, [0])
 	return <>
-		<nav className='bg-black text-white flex items-center justify-between sticky top-0 z-10'>
+		<nav className='bg-black backdrop-blur opacity-90 text-white flex items-center justify-between sticky top-0 z-10'>
 			<img onClick={(e)=>{if (hamburger == false) {
 				setHamburger(true)
 			} else if(hamburger == true) {
