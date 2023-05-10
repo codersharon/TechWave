@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 		});
 	});
 
-  return <div className='bg-black div'>
+  return <div className='bg-black'>
 		  <LoadingBar
         color='red'
         progress={progress}
