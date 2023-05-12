@@ -13,8 +13,8 @@ const HowTo = (props) => {
       canonical="https://tech-vave.vercel.app/how-to"
     />
 		<Head><title>TechWave || How-To</title></Head>
-		<div className='flex item-center justify-center w-full min-h-[100vh] bg-gray-100'>
-			<div className='w-full text-center bg-white'>
+		<div className='text-white bg-black flex item-center justify-center w-full min-h-[100vh] bg-gray-100'>
+			<div className='w-full text-center bg-black'>
 				<div className='mx-2 border-b-blue-600 border-b-4'>
 					<h1 className='font-bold text-2xl cursor-default'>Latest How To</h1>
 				</div>

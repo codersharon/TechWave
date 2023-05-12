@@ -30,8 +30,8 @@ const Home: NextPage = (props) => {
 			})
 		}</div>
 		
-		<div className='w-full flex item-center justify-center min-h-[100vh] bg-gray-100'>
-			<div className='text-center bg-white'>
+		<div className='w-full flex item-center justify-center min-h-[100vh]'>
+			<div className='text-center'>
 				<div className='mx-2 border-b-blue-600 border-b-4'>
 					<h1 className='font-bold text-2xl cursor-default'>Posts</h1>
 				</div>

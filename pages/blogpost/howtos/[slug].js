@@ -40,13 +40,13 @@ const Slug = (props) => {
 				}]}
 			}
     />
-		<div style={{ margin: "0% 12px" }}>
+		<div className='bg-black min-h-[100vh]' style={{ margin: "0% 12px" }}>
 			<img src={image? image : "/no.webp"} width={'320px'} height={'240px'} alt="image" className='rounded-xl mx-2'/>
 			<h1 style={{ fontSize: "xx-large", font: "bolder" }}>{title? title : "title"}</h1>
 			<hr></hr>
 			<p styles={{ fontSize: "x-large" }}>{content? content : "content"}</p>
 			<p styles={{ fontSize: "large" }}>{date? date : "date"}</p>
-			<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+			<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2 bg-gray-600 rounded-lg' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 		</div>
 	</>
 	

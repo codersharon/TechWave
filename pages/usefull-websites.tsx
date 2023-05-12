@@ -13,8 +13,8 @@ const Websites = (props) => {
       canonical="https://tech-vave.vercel.app/usefull-websites"
     />
 		<Head><title>TechWave || Usefull Websites</title></Head>
-		<div className='flex item-center justify-center w-full w-fit min-h-[100vh] bg-gray-100'>
-			<div className='sm:w-fit md:w-full text-center bg-white'>
+		<div className='text-white flex item-center justify-center w-full w-fit min-h-[100vh]'>
+			<div className='sm:w-fit md:w-full text-center'>
 				<div className='w-full mx-2 border-b-blue-600 border-b-4'>
 					<h1 className='font-bold text-2xl cursor-default'>Usefull Websites</h1>
 				</div>

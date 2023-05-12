@@ -14,8 +14,8 @@ const Apps = (props) => {
 		<Head>
 			<title>TechWave || Usefull Apps</title>
 		</Head>
-		<div className='flex item-center justify-center lg:w-full sm:w-fit min-h-[100vh] bg-gray-100'>
-			<div className='sm:w-fit lg:w-full text-center bg-white'>
+		<div className='text-white  bg-black flex item-center justify-center lg:w-full sm:w-fit min-h-[100vh] bg-gray-100'>
+			<div className='sm:w-fit lg:w-full text-center bg-black'>
 				<div className='mx-2 border-b-blue-600 border-b-4'>
 					<h1 className='font-bold text-2xl cursor-default'>Usefull Apss</h1>
 				</div>
