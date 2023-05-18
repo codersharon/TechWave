@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Head from "next/head"
 import { NextSeo } from 'next-seo';
 // import Image from "next/image"
 import Head from "next/head"
