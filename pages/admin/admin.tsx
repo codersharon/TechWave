@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from "next/router"
-import Head from 'next/head';
 import Nav from "./comps/nav";
 import PostItem from "./comps/postitem1";
 

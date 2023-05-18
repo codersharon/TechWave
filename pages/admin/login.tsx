@@ -1,7 +1,6 @@
 /* eslint-disable */
 import { useEffect, useState } from "react"
 import { useRouter } from 'next/router'
-import Head from "next/head"
 
 import Link from "next/link"
 
@@ -29,9 +28,6 @@ const Login = (props) => {
 	}, []);
 
 	return <>
-			<Head>
-			<title>TechWave || Login</title>
-		</Head>
 	 <div className="text-white bg-gray-900 shadow-md h-[91.2vh] p-8 flex flex-col">
       <div className="relative mb-4">
         <label htmlFor="username" className="leading-7 text-sm text-gray-400 flex flex-col items-start">Username</label>

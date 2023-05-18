@@ -1,19 +1,10 @@
 import { useEffect, useState } from 'react';
 import AppsItem from './comps/appsitem';
-import Head from 'next/head'
-import { NextSeo } from 'next-seo';
 
 const Apps = (props) => {
 	const [apps, setApps] = useState(props.data.apps);
 	
   return <>
-		<NextSeo
-      title="TechWave || Usefull Apps"
-      canonical="https://tech-vave.vercel.app/usefull-apps"
-    />
-		<Head>
-			<title>TechWave || Usefull Apps</title>
-		</Head>
 		<div className='text-white  bg-black flex item-center justify-center lg:w-full sm:w-fit min-h-[100vh] bg-gray-100'>
 			<div className='sm:w-fit lg:w-full text-center bg-black'>
 				<div className='mx-2 border-b-blue-600 border-b-4'>

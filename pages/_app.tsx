@@ -7,6 +7,9 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Footer from "./comps/footer"
 import LoadingLogo from './comps/loadinglogo'
+import { NextSeo } from 'next-seo';
+import Head from "next/head";
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(0)
 	const router = useRouter()
@@ -22,6 +25,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 	});
 
   return <div className='bg-black text-white'>
+		<NextSeo
+      title={"TechWave"}
+      description="Online Tech guid, news, tech tricks and tips"
+      canonical="https://tech-vave.vercel.app/"
+    />
+
+		<Head>
+			<title>TechWave</title>
+			<meta name="description" content="Online Tech guid, news, tech tricks and tips" />
+			<meta property="og:image" content="https://tech-vave.vercel.app/favicon.ico" />
+			<meta property="og:url" content={`https://tech-vave.vercel.app${router.pathname}`} />
+			<link rel="icon" href="/favicon.ico" />
+		</Head>
+
 		  <LoadingBar
         color='red'
         progress={progress}

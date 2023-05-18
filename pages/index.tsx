@@ -3,24 +3,12 @@ const mySecret2 = process.env['api2']
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
 import PostItem from './comps/postitem'
-import Head from 'next/head'
-import { NextSeo } from 'next-seo';
 import axios from 'axios';
 
 const Home: NextPage = (props) => {
 	const [posts, setPosts] = useState(props.data.posts);
 	const [news, setNews] = useState(props.news.articles)
   return <>
-		<NextSeo
-      title={"TechWave"}
-      description="Online Tech guid, news, tech tricks and tips"
-      canonical="https://tech-vave.vercel.app/"
-    />
-		<Head>
-			<title>TechWave</title>
-			<meta name="description" content="Online Tech guid, news, tech tricks and tips" />
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
 		<div className='flex lg:flex-row sm:flex-col items-center justify-center'>{
 			news.map((newsitem) => {
 				return	<div key={newsitem.title} className='lg:hover:blur cursor-pointer bg-black text-white text-xl font-bold'>

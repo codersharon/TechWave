@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
 import { useRouter } from "next/router";
 import Nav from "./comps/nav";
 import AppsItem from "./comps/appsitem1";
@@ -46,9 +45,6 @@ const Apps = (props) => {
 	
   return (
     <>
-		<Head>
-			<title>TechWave || Admin</title>
-		</Head>
 			<Nav />
 			<div className='mt-5 flex flex-col'>
 				<input type='file' onChange={(e)=>{ const reader = new FileReader(); reader.addEventListener('load', () => { setImage(reader.result); }); reader.readAsDataURL(e.target.files[0])}} id='Image' className='m-2 w-fit hidden' />

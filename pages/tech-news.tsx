@@ -1,7 +1,6 @@
 import { useState } from "react";
 import NewsItem from './comps/newsitem'
 import InfiniteScroll from "react-infinite-scroll-component"
-import Head from 'next/head'
 import { NextSeo } from 'next-seo';
 import axios from 'axios';
 
@@ -18,13 +17,6 @@ const TechNews = (props) => {
 	};
 	
 	return <>
-		<NextSeo
-      title="TechWave || Tech News"
-      canonical="https://tech-vave.vercel.app/tech-news"
-    />
-		<Head>
-			<title>TechWave || Tech News</title>
-		</Head>
 		<div className='flex items-center justify-center'>
 			<InfiniteScroll
         dataLength={page * 10}

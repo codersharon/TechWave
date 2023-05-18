@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
 import { useRouter } from "next/router";
 import Nav from "./comps/nav";
 import WebsiteItem from "./comps/websiteitem1";
@@ -45,9 +44,6 @@ const Websites = (props) => {
 	
   return (
     <>
-		<Head>
-			<title>TechWave || Admin</title>
-		</Head>
 			<Nav />
 			<div className='mt-5 flex flex-col'>
 				<input type='text' value={title} onChange={(e)=>{setTitle(e.target.value)}} id='PostHeading' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Title' />
