@@ -25,19 +25,19 @@ function MyApp({ Component, pageProps }: AppProps) {
 	});
 
   return <div className='bg-black text-white'>
-		<NextSeo
+		{ router.pathname !== "/blogpost/" ? <NextSeo
       title={"TechWave"}
       description="Online Tech guid, news, tech tricks and tips"
       canonical="https://tech-vave.vercel.app/"
-    />
+    />: <div></div>}
 
-		<Head>
+		{ router.pathname !== "/blogpost/" ? <Head>
 			<title>TechWave</title>
 			<meta name="description" content="Online Tech guid, news, tech tricks and tips" />
 			<meta property="og:image" content="https://tech-vave.vercel.app/favicon.ico" />
 			<meta property="og:url" content={`https://tech-vave.vercel.app${router.pathname}`} />
 			<link rel="icon" href="/favicon.ico" />
-		</Head>
+		</Head>: <div></div>}
 
 		  <LoadingBar
         color='red'
