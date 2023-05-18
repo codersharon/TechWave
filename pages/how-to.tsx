@@ -4,9 +4,11 @@ import HowToItem from './comps/howtoitem'
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+
 const HowTo = (props) => {
 	const [howto, setHowto] = useState(props.data.howto);
 	const router = useRouter()
+
 	return <>
 
 		<NextSeo
@@ -19,7 +21,7 @@ const HowTo = (props) => {
 			<title>TechWave</title>
 			<meta name="description" content="Online Tech guid, news, tech tricks and tips" />
 			<meta property="og:image" content="https://tech-vave.vercel.app/favicon.ico" />
-			<meta property="og:url" content={`https://tech-vave.vercel.app${router.pathname}`} />
+			<meta property="og:url" content={`https://tech-vave.vercel.app/how-to`} />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 

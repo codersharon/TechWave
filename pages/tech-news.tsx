@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo';
 import axios from 'axios';
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+
 const TechNews = (props) => {
 	const [articles, setArticles] = useState(props.data.articles);
 	const [page, setPage] = useState(1);
@@ -29,7 +30,7 @@ const TechNews = (props) => {
 			<title>TechWave</title>
 			<meta name="description" content="Online Tech guid, news, tech tricks and tips" />
 			<meta property="og:image" content="https://tech-vave.vercel.app/favicon.ico" />
-			<meta property="og:url" content={`https://tech-vave.vercel.app${router.pathname}`} />
+			<meta property="og:url" content={`https://tech-vave.vercel.app/tech-news`} />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 

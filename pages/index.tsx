@@ -6,11 +6,12 @@ import PostItem from './comps/postitem'
 import axios from 'axios';
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router"
+
 const Home: NextPage = (props) => {
 	const [posts, setPosts] = useState(props.data.posts);
 	const [news, setNews] = useState(props.news.articles)
-		const router = useRouter()
+
 	return <>
 
 		<NextSeo

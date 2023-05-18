@@ -18,7 +18,7 @@ const Apps = (props) => {
 			<title>TechWave</title>
 			<meta name="description" content="Online Tech guid, news, tech tricks and tips" />
 			<meta property="og:image" content="https://tech-vave.vercel.app/favicon.ico" />
-			<meta property="og:url" content={`https://tech-vave.vercel.app${router.pathname}`} />
+			<meta property="og:url" content={`https://tech-vave.vercel.app/usefull-apps`} />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
