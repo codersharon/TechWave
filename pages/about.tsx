@@ -1,9 +1,10 @@
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
-
+import { useRouter } from 'next/router'
 const About = () => {
-  return <>
+const router = useRouter();
 
+  return <>
     <NextSeo
       title={"TechWave"}
       description="Online Tech guid, news, tech tricks and tips"
