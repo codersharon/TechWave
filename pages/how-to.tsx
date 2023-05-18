@@ -6,7 +6,6 @@ const HowTo = (props) => {
 	const [howto, setHowto] = useState(props.data.howto);
 	
 	return <>
-		<Head><title>TechWave || How-To</title></Head>
 		<div className='text-white bg-black flex item-center justify-center w-full min-h-[100vh] bg-gray-100'>
 			<div className='w-full text-center bg-black'>
 				<div className='mx-2 border-b-blue-600 border-b-4'>
