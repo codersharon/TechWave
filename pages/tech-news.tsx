@@ -4,11 +4,11 @@ import InfiniteScroll from "react-infinite-scroll-component"
 import { NextSeo } from 'next-seo';
 import axios from 'axios';
 import Head from 'next/head'
-
+import { useRouter } from 'next/router'
 const TechNews = (props) => {
 	const [articles, setArticles] = useState(props.data.articles);
 	const [page, setPage] = useState(1);
-
+	const router = useRouter()
 
 	const getMore = async () => {
 		let r = await fetch(`/api/news?page=${page + 1}`, { method: "POST" });

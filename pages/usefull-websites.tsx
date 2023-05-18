@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react'
 import WebsiteItem from './comps/websiteitem'
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
-
+import { useRouter } from 'next/router'
 const Websites = (props) => {
 	const [websites, setWebsites] = useState(props.data.websites);
-
+	const router = useRouter()
 	return <>
 
 		<NextSeo

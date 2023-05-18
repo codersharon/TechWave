@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import AppsItem from './comps/appsitem';
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
-
+import { useRouter } from 'next/router'
 const Apps = (props) => {
 	const [apps, setApps] = useState(props.data.apps);
-
+	const router = useRouter()
 	return <>
 
 		<NextSeo

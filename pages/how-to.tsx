@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react'
 import HowToItem from './comps/howtoitem'
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
-
+import { useRouter } from 'next/router'
 const HowTo = (props) => {
 	const [howto, setHowto] = useState(props.data.howto);
-
+	const router = useRouter()
 	return <>
 
 		<NextSeo
