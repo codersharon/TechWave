@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+
 const About = () => {
 const router = useRouter();
 
