@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Head from "next/head"
 import { NextSeo } from 'next-seo';
 // import Image from "next/image"
+import Head from "next/head"
 
 const Slug = (props) => {
 	const [title, setTitle] = useState(props.data.title);
@@ -33,20 +34,23 @@ const Slug = (props) => {
         url: `https://tech-vave.vercel.app/blogpost/${props.i}`,
 				title: title,
       	description: content.slice(0, 60),
-        images: [{
-					url: "/favicon.ico",
-					width: 800,
-			    height: 600
-				}]}
+        images: {
+					url: "/favicon.jpeg",
+				}}
 			}
     />
+		
+		<Head>
+			<meta property="og:image" content={image? image : "/no.webp"} />
+		</Head>
+		
 		<div className='bg-black min-h-[100vh]' style={{ margin: "0% 12px" }}>
-			<img src={image? image : "/no.webp"} width={'320px'} height={'240px'} alt="image" className='rounded-xl mx-2'/>
-			<h1 style={{ fontSize: "xx-large", font: "bolder" }}>{title? title : "title"}</h1>
+			<h1 style={{ fontSize: "50px", fontWeight: "900" }}>{title? title : "title"}</h1>
+			<img src={image? image : "/no.webp"} width={'720px'} height={'720px'} alt="image" className='rounded-xl mx-2 my-2'/>
 			<hr></hr>
-			<p styles={{ fontSize: "x-large" }}>{content? content : "content"}</p>
+			<p className='text-2xl my-2' >{content? content : "content"}</p>
 			<p styles={{ fontSize: "large" }}>{date? date : "date"}</p>
-			<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2 bg-gray-600 rounded-lg' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+			<p className='font-semibold mr-[32px] flex items-center justify-start'><img className='cursor-pointer w-10 mr-2 bg-gray-600 rounded-lg' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 		</div>
 	</>
 	

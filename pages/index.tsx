@@ -23,7 +23,7 @@ const Home: NextPage = (props) => {
 		</Head>
 		<div className='flex lg:flex-row sm:flex-col items-center justify-center'>{
 			news.map((newsitem) => {
-				return	<div key={newsitem.title} className='hover:blur cursor-pointer bg-black text-white text-xl font-bold'>
+				return	<div key={newsitem.title} className='lg:hover:blur cursor-pointer bg-black text-white text-xl font-bold'>
 				<img src={newsitem.urlToImage? newsitem.urlToImage: "/no.webp"} className='w-[720px] h-[480px]' />
 				<a href={newsitem.url} target="_black" className='p-2 border-r-2 border-r-white flex items-center justify-start'>{newsitem.title? newsitem.title:"not title available"}</a>
 			</div>
