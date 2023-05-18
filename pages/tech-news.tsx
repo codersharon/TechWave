@@ -3,7 +3,6 @@ import NewsItem from './comps/newsitem'
 import InfiniteScroll from "react-infinite-scroll-component"
 import { NextSeo } from 'next-seo';
 import axios from 'axios';
-import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 
 const TechNews = (props) => {
