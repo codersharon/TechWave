@@ -1,5 +1,23 @@
+import { NextSeo } from 'next-seo'
+import Head from 'next/head'
+
 const About = () => {
   return <>
+
+    <NextSeo
+      title={"TechWave"}
+      description="Online Tech guid, news, tech tricks and tips"
+      canonical="https://tech-vave.vercel.app/"
+    />
+
+    <Head>
+      <title>TechWave</title>
+      <meta name="description" content="Online Tech guid, news, tech tricks and tips" />
+      <meta property="og:image" content="https://tech-vave.vercel.app/favicon.ico" />
+      <meta property="og:url" content={`https://tech-vave.vercel.app${router.pathname}`} />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+
     <section className="sm:w-full text-gray-400 bg-gray-900 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">

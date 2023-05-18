@@ -7,51 +7,36 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Footer from "./comps/footer"
 import LoadingLogo from './comps/loadinglogo'
-import { NextSeo } from 'next-seo';
-import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [progress, setProgress] = useState(0)
+	const [progress, setProgress] = useState(0)
 	const router = useRouter()
 
-	useEffect(()=>{
-		router.events.on('routeChangeStart', ()=>{
+	useEffect(() => {
+		router.events.on('routeChangeStart', () => {
 			setProgress(40);
 		});
 
-		router.events.on('routeChangeComplete', ()=>{
+		router.events.on('routeChangeComplete', () => {
 			setProgress(400);
 		});
 	});
 
-  return <div className='bg-black text-white'>
-		{ router.pathname !== "/blogpost/" ? <NextSeo
-      title={"TechWave"}
-      description="Online Tech guid, news, tech tricks and tips"
-      canonical="https://tech-vave.vercel.app/"
-    />: <div></div>}
+	return <div className='bg-black text-white'>
 
-		{ router.pathname !== "/blogpost/" ? <Head>
-			<title>TechWave</title>
-			<meta name="description" content="Online Tech guid, news, tech tricks and tips" />
-			<meta property="og:image" content="https://tech-vave.vercel.app/favicon.ico" />
-			<meta property="og:url" content={`https://tech-vave.vercel.app${router.pathname}`} />
-			<link rel="icon" href="/favicon.ico" />
-		</Head>: <div></div>}
-
-		  <LoadingBar
-        color='red'
-        progress={progress}
-				waitingTime={1000}
-        onLoaderFinished={() => setProgress(0)}
-      />
-			<LoadingLogo />
-			<Navbar />
-			<Component {...pageProps} />
-      <Analytics />
-			<Footer />
+		<LoadingBar
+			color='red'
+			progress={progress}
+			waitingTime={1000}
+			onLoaderFinished={() => setProgress(0)}
+		/>
+		<LoadingLogo />
+		<Navbar />
+		<Component {...pageProps} />
+		<Analytics />
+		<Footer />
 	</div>
-		
+
 }
 
 export default MyApp
