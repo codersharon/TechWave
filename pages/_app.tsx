@@ -6,10 +6,12 @@ import LoadingBar from 'react-top-loading-bar'
 import React, { useState, useEffect } from 'react'
 import Footer from "./comps/footer"
 import LoadingLogo from './comps/loadinglogo'
+import { useRouter } from "next/router"
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const [progress, setProgress] = useState(0)
-
+	const router = useRouter();
+	
 	useEffect(() => {
 		router.events.on('routeChangeStart', () => {
 			setProgress(40);
@@ -21,7 +23,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 	});
 
 	return <div className='bg-black text-white'>
-
 		<LoadingBar
 			color='red'
 			progress={progress}

@@ -3,8 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router';
 
 const About = () => {
-const router = useRouter();
-
+	const router = useRouter();
   return <>
     <NextSeo
       title={"TechWave"}
@@ -16,7 +15,7 @@ const router = useRouter();
       <title>TechWave</title>
       <meta name="description" content="Online Tech guid, news, tech tricks and tips" />
       <meta property="og:image" content="https://tech-vave.vercel.app/favicon.ico" />
-      <meta property="og:url" content={`https://tech-vave.vercel.app${router.pathname}`} />
+      <meta property="og:url" content="https://tech-vave.vercel.app/about" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
 

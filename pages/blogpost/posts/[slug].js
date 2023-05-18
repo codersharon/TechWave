@@ -10,7 +10,7 @@ const Slug = (props) => {
 	const [image, setImage] = useState(props.data.image);
 	const [ likes, setLikes ] = useState(props.data.likes);
 	const [ liked, setLiked ] = useState(false)
-		const handleLike = async () => {
+	const handleLike = async () => {
 		if (liked == false) {
 			const request = await fetch(`/api/post/liked?id=${props.i}`, { method: 'PUT' });
 			const response = await request.json();
@@ -28,8 +28,8 @@ const Slug = (props) => {
 		<NextSeo
       title={title? title: "title || TechWave"}
       description={content.slice(0, 60)}
-      canonical={`https://tech-vave.vercel.app/blogpost/posts/${props.i}`}
-			      openGraph={{
+      canonical={`https://tech-vave.vercel.app/`}
+			openGraph={{
         url: `https://tech-vave.vercel.app/blogpost/posts/${props.i}`,
 				title: title,
       	description: content.slice(0, 60),}
