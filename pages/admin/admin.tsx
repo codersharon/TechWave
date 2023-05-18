@@ -45,10 +45,6 @@ const Admin = (props: any) => {
 
   return (
     <>
-			<Head>
-				<title>TechWave || Admin</title>
-			</Head>
-			
 			<Nav />
 			<div className='mt-5 flex flex-col'>
 				<input type='file' onChange={(e)=>{ const reader = new FileReader(); reader.addEventListener('load', () => { if (reader.result !== null) { setPostImage(`${reader.result}`) } }); reader.readAsDataURL(e.target.files[0])}} id='postImage' className='m-2 w-fit hidden' />
