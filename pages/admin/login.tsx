@@ -62,7 +62,7 @@ const Login = (props) => {
 }
 
 export async function getStaticProps(context) {
-	const a = await fetch('https://techwave.sharonsandeep.repl.co/api/admin', { method: "GET" })
+	const a = await fetch('https://tech-vave.vercel.app/api/admin', { method: "GET" })
 	const data = await a.json();
 
 	return {
