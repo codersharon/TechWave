@@ -21,6 +21,7 @@ async function handler(req, res) {
       optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
    });
 	if (req.method == "DELETE") {
+		console.log(Post.dataSize())
 		let posts = await Post.findByIdAndDelete(req.query.id);
 		res.status(200).json({ posts });
 	} else if (req.method == "GET") {
