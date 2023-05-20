@@ -64,12 +64,13 @@ const Apps = (props) => {
 
 			<Nav />
 			<div className='mt-5 flex flex-col'>
-				<input type='file' onChange={(e) => { const reader = new FileReader(); reader.addEventListener('load', () => { setImage(reader.result); }); reader.readAsDataURL(e.target.files[0]) }} id='Image' className='m-2 w-fit hidden' />
+				{/* <input type='file' onChange={(e) => { const reader = new FileReader(); reader.addEventListener('load', () => { setImage(reader.result); }); reader.readAsDataURL(e.target.files[0]) }} id='Image' className='m-2 w-fit hidden' /> */}
 				<input type='text' value={title} onChange={(e) => { setTitle(e.target.value) }} id='PostHeading' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Title' />
 				<textarea type='text' value={content} onChange={(e) => { setContent(e.target.value) }} id='postdate' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Content'></textarea>
 				<input type='text' value={link} onChange={(e) => { setLink(e.target.value) }} id='postdate' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Link' />
 				<input type='text' value={tags} onChange={(e) => { setTags(e.target.value) }} id='posttags' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Tags' />
-				<label htmlFor='Image' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit '>Upload Image</label>
+				{/* <label htmlFor='Image' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit '>Upload Image</label> */}
+				<input type='text' value={image} onChange={(e)=>{setPostImage(e.taget.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Image Link' />
 				<hr />
 				<button onClick={SubmitPost} id='postSubmitButton' className='m-4 w-fit bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl' >Post</button>
 			</div>
@@ -89,7 +90,7 @@ const Apps = (props) => {
 }
 
 export async function getServerSideProps(context) {
-	const a = await fetch('https://tech-vave.vercel.app/api/admin', { method: "GET" })
+	const a = await fetch('https://tech-vave.vercel.app/api/admin', { method: "POST" })
 	const b = await a.json();
 	const c = await fetch('https://tech-vave.vercel.app/api/apps', { method: "GET" })
 	const data = await c.json();
