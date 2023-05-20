@@ -70,7 +70,7 @@ const Apps = (props) => {
 				<input type='text' value={link} onChange={(e) => { setLink(e.target.value) }} id='postdate' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Link' />
 				<input type='text' value={tags} onChange={(e) => { setTags(e.target.value) }} id='posttags' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Tags' />
 				{/* <label htmlFor='Image' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit '>Upload Image</label> */}
-				<input type='text' value={image} onChange={(e)=>{setPostImage(e.taget.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Image Link' />
+				<input type='text' value={image} onChange={(e)=>{setPostImage(e.target.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Image Link' />
 				<hr />
 				<button onClick={SubmitPost} id='postSubmitButton' className='m-4 w-fit bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl' >Post</button>
 			</div>

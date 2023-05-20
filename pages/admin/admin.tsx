@@ -57,7 +57,7 @@ const Admin = (props: any) => {
 				<input type='text' value={postDate} onChange={(e)=>{setPostDate(e.target.value)}} id='postdate' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Post Date'  />
 				<input type='text' value={postTags} onChange={(e)=>{setPostTags(e.target.value)}} id='posttags' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='post Tags'  />
 				{/* <label htmlFor='postImage' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit '>Upload Image</label> */}
-				<input type='text' value={postImage} onChange={(e)=>{setPostImage(e.taget.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Post Image Link' />
+				<input type='text' value={postImage} onChange={(e)=>{setPostImage(e.target.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Post Image Link' />
 				<hr />
 				<button onClick={SubmitPost} id='postSubmitButton' className='m-4 w-fit bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl' >Post</button>
 			</div>
