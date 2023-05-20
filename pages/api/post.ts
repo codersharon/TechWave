@@ -26,7 +26,8 @@ async function handler(req, res) {
 	} else if (req.method == "GET") {
 		const posts = await Post.find().sort({_id:-1});
 		const dataSize = await Post.stats();
-		res.status(200).json({ posts, dataSize })
+		console.log(dataSize)
+		res.status(200).json({ posts })
 	} else if (req.method == "POST") {
 		const post = new Post({
 			title: req.body.title,
