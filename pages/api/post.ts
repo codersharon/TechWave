@@ -22,7 +22,7 @@ async function handler(req, res) {
    });
 	if (req.method == "DELETE") {
 		let posts = await Post.findByIdAndDelete(req.query.id);
-		const dataSize = await Post.dataSize();
+		const dataSize = await Post.stats();
 		res.status(200).json({ posts, dataSize });
 	} else if (req.method == "GET") {
 		const posts = await Post.find().sort({_id:-1});
