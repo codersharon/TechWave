@@ -24,7 +24,7 @@ async function handler(req, res) {
 		let posts = await Post.findByIdAndDelete(req.query.id);
 		res.status(200).json({ posts });
 	} else if (req.method == "GET") {
-		const dataSize = Post.stats();
+		const dataSize = await Post.dataSize();
 		console.log(dataSize)
 		const posts = await Post.find().sort({_id:-1});
 		res.status(200).json({ posts })
