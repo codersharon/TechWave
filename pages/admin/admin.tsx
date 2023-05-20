@@ -51,12 +51,13 @@ const Admin = (props: any) => {
 			
 			<Nav />
 			<div className='mt-5 flex flex-col'>
-				<input type='file' onChange={(e)=>{ const reader = new FileReader(); reader.addEventListener('load', () => { if (reader.result !== null) { setPostImage(`${reader.result}`) } }); reader.readAsDataURL(e.target.files[0])}} id='postImage' className='m-2 w-fit hidden' />
+				{/* <input type='file' onChange={(e)=>{ const reader = new FileReader(); reader.addEventListener('load', () => { if (reader.result !== null) { setPostImage(`${reader.result}`) } }); reader.readAsDataURL(e.target.files[0])}} id='postImage' className='m-2 w-fit hidden' /> */}
 				<input type='text' value={postTitle} onChange={(e)=>{setPostTitle(e.target.value)}} id='PostHeading' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='PostHeading' /> 
 				<textarea type='text' value={postContent} onChange={(e)=>{setPostContent(e.target.value)}} id='postcontent' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='PostContent'  />
 				<input type='text' value={postDate} onChange={(e)=>{setPostDate(e.target.value)}} id='postdate' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='PostDate'  />
 				<input type='text' value={postTags} onChange={(e)=>{setPostTags(e.target.value)}} id='posttags' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='posttags'  />
-				<label htmlFor='postImage' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit '>Upload Image</label>
+				{/* <label htmlFor='postImage' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit '>Upload Image</label> */}
+				<input type='text' value={postImage} onChange={(e)=>{setPostImage(e.taget.value)}} />
 				<hr />
 				<button onClick={SubmitPost} id='postSubmitButton' className='m-4 w-fit bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl' >Post</button>
 			</div>
