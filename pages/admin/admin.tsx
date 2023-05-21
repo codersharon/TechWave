@@ -10,6 +10,7 @@ const Admin = (props: any) => {
 	const [ postDate, setPostDate ] = useState("");
 	const [ postTags, setPostTags ] = useState("");
 	const [ postImage, setPostImage ] = useState("");
+	const [ postLinks, setPostLinks ] = useState([]);
 	const [ postTitle, setPostTitle ] = useState("");
 	const [ postContent, setPostContent ] = useState("");
 	const [ adminID, setAdminID ] = useState(props.b[0].adid);
@@ -34,6 +35,7 @@ const Admin = (props: any) => {
 		    body: JSON.stringify({
 				  title: postTitle,
 				  image: postImage,
+					links: postLinks,
 					content: postContent,
 				  date: postDate,
 				  tags: postTags,
@@ -55,9 +57,10 @@ const Admin = (props: any) => {
 				<input type='text' value={postTitle} onChange={(e)=>{setPostTitle(e.target.value)}} id='PostHeading' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Post Heading' /> 
 				<textarea type='text' value={postContent} onChange={(e)=>{setPostContent(e.target.value)}} id='postcontent' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Post Content'  />
 				<input type='text' value={postDate} onChange={(e)=>{setPostDate(e.target.value)}} id='postdate' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Post Date'  />
-				<input type='text' value={postTags} onChange={(e)=>{setPostTags(e.target.value)}} id='posttags' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='post Tags'  />
+				<input type='text' value={postTags} onChange={(e)=>{setPostTags(e.target.value)}} id='posttags' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='post Tags (Array)'  />
 				{/* <label htmlFor='postImage' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit '>Upload Image</label> */}
 				<input type='text' value={postImage} onChange={(e)=>{setPostImage(e.target.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Post Image Link' />
+				<input type='text' value={postLinks} onChange={(e)=>{setPostLinks(e.target.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Post Links (Array)' />
 				<hr />
 				<button onClick={SubmitPost} id='postSubmitButton' className='m-4 w-fit bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl' >Post</button>
 			</div>

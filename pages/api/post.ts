@@ -31,6 +31,7 @@ async function handler(req, res) {
 			title: req.body.title,
 			content: req.body.content,
 			image: req.body.image,
+			links: req.body.links,
 			date: req.body.date,
 			tags: req.body.tags,
 			likes: "0",

@@ -8,6 +8,7 @@ import Head from 'next/head'
 const HowTo = (props) => {
 	const router = useRouter();
 	const [image, setImage] = useState("");
+	const [ links, setLinks ] = useState([]);
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 	const [date, setDate] = useState("");
@@ -36,6 +37,7 @@ const HowTo = (props) => {
 				title: title,
 				content: content,
 				image: image,
+				links: links,
 				date: date,
 				tags: tags,
 			}),
@@ -71,6 +73,7 @@ const HowTo = (props) => {
 				<input type='text' value={tags} onChange={(e) => { setTags(e.target.value) }} id='posttags' className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Tags' />
 				{/* <label htmlFor='Image' className='bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl m-4 w-fit'>Upload Image</label> */}
 				<input type='text' value={image} onChange={(e)=>{setImage(e.target.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Image Link' />
+				<input type='text' value={links} onChange={(e)=>{setLinks(e.target.value)}} className='m-2 w-fit bg-black text-white mx-5 rounded-lg p-2' placeholder='Links (Array)' />
 				<hr />
 				<button onClick={SubmitPost} id='postSubmitButton' className='m-4 w-fit bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-xl' >Post</button>
 			</div>
