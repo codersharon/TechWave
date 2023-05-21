@@ -8,7 +8,7 @@ import Head from 'next/head'
 const HowTo = (props) => {
 	const router = useRouter();
 	const [image, setImage] = useState("");
-	const [ links, setLinks ] = useState([]);
+	const [links, setLinks] = useState([]);
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 	const [date, setDate] = useState("");
