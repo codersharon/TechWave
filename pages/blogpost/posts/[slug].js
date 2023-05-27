@@ -4,7 +4,6 @@ import { NextSeo } from 'next-seo';
 import Head from "next/head"
 
 const Slug = (props) => {
-	console.log(props.data.links)
 	const [title, setTitle] = useState(props.data.title);
 	const [date, setDate] = useState(props.data.date);
 	const [content, setContent] = useState(props.data.content? props.data.content : "");
