@@ -82,9 +82,7 @@ const HowTo = (props) => {
 				<h1 className='mx-2 my-2 text-3xl border-b-2 border-black w-fit'>Posts</h1>
 				<div id='latestPosts' >{
 					all.map((post) => {
-						return (
-							<HowToItem key={post._id} id={post._id} likes={post.likes} image={post.image} title={post.title} content={post.content} date={post.date} />
-						)
+						return <HowToItem key={post._id} id={post._id} likes={post.likes} image={post.image} title={post.title} content={post.content} date={post.date} />
 					})
 				}</div>
 			</div>

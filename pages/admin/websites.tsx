@@ -75,9 +75,7 @@ const Websites = (props) => {
 				<h1 className='mx-2 my-2 text-3xl border-b-2 border-black w-fit'>Posts</h1>
 				<div id='latestPosts' >{
 					all.map((post) => {
-						return (
-							<WebsiteItem key={post._id} id={post._id} image={post.image} title={post.title} content={post.content} date={post.date} />
-						)
+						return <WebsiteItem key={post._id} id={post._id} image={post.image} title={post.title} content={post.content} date={post.date} />
 					})
 				}</div>
 			</div>
