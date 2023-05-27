@@ -4,6 +4,7 @@ import { NextSeo } from 'next-seo';
 import Head from "next/head"
 
 const Slug = (props) => {
+	console.log(props.data.links)
 	const [title, setTitle] = useState(props.data.title);
 	const [date, setDate] = useState(props.data.date);
 	const [content, setContent] = useState(props.data.content? props.data.content : "");
@@ -47,11 +48,11 @@ const Slug = (props) => {
 			<hr></hr>
 			<p className='text-2xl my-2' >{content? content : "content"}</p>
 			<p styles={{ fontSize: "large" }}>{date? date : "date"}</p>
-			{/* <span className='flex flex-col justify-center items-start'>{
+			<span className='flex flex-col justify-center items-start'>{
 				links.map((link)=>{
-					return <a href={link}>{link}</a>
+					return <a key={link} target='_blank' className='text-blue-500 hover:underline' href={link}>{link}</a>
 				})
-			}</span> */}
+			}</span>
 			<p className='font-semibold mr-[32px] flex items-center justify-start'><img className='cursor-pointer w-10 mr-2 bg-gray-600 rounded-lg' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
 		</div>
 	</>

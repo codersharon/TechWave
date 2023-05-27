@@ -35,10 +35,10 @@ const Admin = (props: any) => {
 		    body: JSON.stringify({
 				  title: postTitle,
 				  image: postImage,
-					links: postLinks,
+					links: JSON.parse(postLinks),
 					content: postContent,
 				  date: postDate,
-				  tags: postTags,
+				  tags: JSON.parse(postTags),
 				}),
 		});		
 		const text = await response.json();
@@ -69,9 +69,7 @@ const Admin = (props: any) => {
 			<h1 className='mx-2 my-2 text-3xl border-b-2 border-black w-fit'>Posts</h1>
 				<div id='latestPosts' >{
 					all.map((post)=>{
-						return <>
-							<PostItem key={post._id} id={post._id} likes={post.likes} image={post.image? post.image : "/no.webp"} title={post.title} content={post.content} date={post.date} />
-						</>
+						return <PostItem key={post._id} id={post._id} likes={post.likes} image={post.image? post.image : "/no.webp"} title={post.title} content={post.content} date={post.date} />
 					})
 				}</div>
 				</div>

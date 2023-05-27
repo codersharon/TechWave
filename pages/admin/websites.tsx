@@ -36,7 +36,7 @@ const Websites = (props) => {
 				title: title,
 				content: content,
 				link: link,
-				tags: tags,
+				tags: JSON.parse(tags),
 			}),
 		});
 

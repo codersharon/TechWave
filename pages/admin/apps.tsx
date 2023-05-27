@@ -37,7 +37,7 @@ const Apps = (props) => {
 				content: content,
 				image: image,
 				link: link,
-				tags: tags,
+				tags: JSON.parse(tags),
 			}),
 		});
 
@@ -79,10 +79,7 @@ const Apps = (props) => {
 				<h1 className='mx-2 my-2 text-3xl border-b-2 border-black w-fit'>Posts</h1>
 				<div id='latestPosts' >{
 					all.map((post) => {
-						return (
-							<AppsItem key={post._id} id={post._id} image={post.image} title={post.title} content={post.content} date={post.date} />
-						)
-					})
+						return <AppsItem key={post._id} id={post._id} image={post.image} title={post.title} content={post.content} date={post.date} />})
 				}</div>
 			</div>
 		</>

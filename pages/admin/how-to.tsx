@@ -37,9 +37,9 @@ const HowTo = (props) => {
 				title: title,
 				content: content,
 				image: image,
-				links: links,
+				links: JSON.parse(links),
 				date: date,
-				tags: tags,
+				tags: JSON.parse(tags),
 			}),
 		});
 
