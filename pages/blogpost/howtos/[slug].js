@@ -52,7 +52,7 @@ const Slug = (props) => {
 			<p styles={{ fontSize: "large" }}>{date? date : "date"}</p>
 			<span className='flex flex-col justify-center items-start'>{
 				links.map((link)=>{
-					return <a href={link}>{link}</a>
+					return <a key={link} target='_blank' className='text-blue-500 hover:underline' href={link}>{link}</a>
 				})
 			}</span>
 			<p className='font-semibold mr-[32px] flex items-center justify-start'><img className='cursor-pointer w-10 mr-2 bg-gray-600 rounded-lg' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>

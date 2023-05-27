@@ -11,7 +11,7 @@ const Slug = (props) => {
 	const [image, setImage] = useState(props.data.image);
 	const [links, setLinks] = useState(props.data.links? props.data.links : []);
 	const [ likes, setLikes ] = useState(props.data.likes);
-	const [ liked, setLiked ] = useState(false)
+	const [ liked, setLiked ] = useState(false);
 	const handleLike = async () => {
 		if (liked == false) {
 			const request = await fetch(`/api/post/liked?id=${props.i}`, { method: 'PUT' });
