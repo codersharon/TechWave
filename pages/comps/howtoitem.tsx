@@ -22,7 +22,6 @@ const HowToItem = (props: any) => {
 			setLiked(false);
 			setLikes(likes-1)
 		}
-		setLiked(true);
 	}
 	return <>
 			<div className='sm:w-full m-2 cursor-pointer flex lg:flex-row sm:flex-col item-center justify-start border-b-2 border-white p-5 rounded-lg'>

@@ -23,7 +23,6 @@ const PostItem = (props: any) => {
 			setLiked(false);
 			setLikes(likes-1)
 		}
-		setLiked(true);
 	}
 	return <>
 		{content? 

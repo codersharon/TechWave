@@ -17,20 +17,6 @@ const PostItem = (props: any) => {
 		const text = await response.json();
 		alert("Successfully deleted post.");
 	}
-	const handleLike = async () => {
-		if (liked == false) {
-			const request = await fetch(`/api/posts/liked?id=${id}`, { method: 'PUT' });
-			const response = await request.json();
-			setLiked(true);
-			setLikes(likes+1)
-		} else if (liked == true) {
-			const request = await fetch(`/api/post/unliked?id=${id}`, { method: 'PUT' });
-			const response = await request.json();
-			setLiked(false);
-			setLikes(likes-1)
-		}
-		setLiked(true);
-	}
 	return <>
 			{content? 
 			<div key={id} className='sm:w-full m-2 cursor-pointe flex lg:flex-row sm:flex-col item-center justify-start border-b-2 border-black p-5 rounded-lg'>
@@ -45,7 +31,7 @@ const PostItem = (props: any) => {
 								<p className='font-semibold mx-[32px]'>{date}</p>
 							</div>
 						</Link>
-						<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2 bg-gray-600 rounded-lg' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+						<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2 bg-gray-600 rounded-lg' src={'/like.svg'} /> {likes}</p>
 						<button onClick={(e)=>{deletePost(id)}} className='mt-2 bg-blue-600 hover:bg-blue-700 p-2 h-fit rounded-xl mx-2 text-white'>Delete</button>
 					</div>
 					</div>
@@ -58,7 +44,7 @@ const PostItem = (props: any) => {
 						<h2 className='font-bold text-xl mx-2 mt-5'>{title}</h2>
 						<p className='font-semibold mx-[32px]'>{date}</p>
 					</div>
-					<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2 bg-gray-600 rounded-lg' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
+					<p className='font-semibold mx-[32px] flex items-center justify-start'><img className='mr-2 bg-gray-600 rounded-lg' src={'like.svg'} /> {likes}</p>
 					<button onClick={(e)=>{deletePost()}} className='mt-2 bg-blue-600 hover:bg-blue-700 p-2 h-fit rounded-xl mx-2 text-white'>Delete</button>
 				</div>
 			</div>}
