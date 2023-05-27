@@ -9,7 +9,6 @@ import Head from 'next/head'
 import { useRouter } from "next/router"
 
 const Home: NextPage = (props) => {
-	// console.log(props.data.dataSize)
 	const [posts, setPosts] = useState(props.data.posts);
 	const [news, setNews] = useState(props.news.articles)
 	const router = useRouter();
