@@ -10,8 +10,8 @@ const NewsItem = (props: any) => {
 	const [source, setSource] = useState(props.source);
 	
 	return <>
-		<div className='m-2 bg-slate-900 text-white border-2 border-black lg:w-[724px] p-2 rounded-lg'>
-			<img src={img?.search(/https:/)==0? img : `/no.webp`}  className='lg:w-[724px] lg:h-[362px] blur-none rounded' />
+		<div className='bg-slate-900 text-white border-2 border-black lg:w-[724px] py-2 rounded-lg'>
+			<img src={img?.search(/https:/)==0? img : `/no.webp`}  className='lg:w-[720px] lg:h-[480px] sm:px-5 blur-none rounded' />
 			<h1 className='blur-none font-bolder text-2xl border-b-2 border-blue-600'>{title? title.slice(0, 45) + "...": "not available"}</h1>
 			<p className='blur-none text-lg border-b-2 border-blue-500'>{desc? desc.slice(0, 85) + "...": "not available"}</p>
 			<p>publised at: {date}</p>

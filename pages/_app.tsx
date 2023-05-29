@@ -7,6 +7,8 @@ import React, { useState, useEffect } from 'react'
 import Footer from "./comps/footer"
 import LoadingLogo from './comps/loadinglogo'
 import { useRouter } from "next/router"
+import NavigationBar from "./comps/navigationbar"
+
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const [progress, setProgress] = useState(0)
@@ -34,6 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 		<Component {...pageProps} />
 		<Analytics />
 		<Footer />
+		<NavigationBar />
 	</div>
 
 }

@@ -32,8 +32,9 @@ const Home: NextPage = (props) => {
 		<div className='flex lg:flex-row sm:flex-col items-center justify-center'>{
 			news.map((newsitem) => {
 				return <div key={newsitem.title} className='lg:hover:blur cursor-pointer bg-black text-white text-xl font-bold'>
-					<img src={newsitem.urlToImage ? newsitem.urlToImage : "/no.webp"} className='w-[720px] h-[480px]' />
-					<a href={newsitem.url} target="_black" className='p-2 border-r-2 border-r-white flex items-center justify-start'>{newsitem.title ? newsitem.title : "not title available"}</a>
+					<div className='sm:flex items-center justify-start lg:hidden mx-5 border-y-2 border-gray-600'><h3 className=' my-2 text-sm'>{newsitem.author} .</h3> <p className='text-lg text-blue-500 underline'>{newsitem.source.id?newsitem.source.id : newsitem.source.name}</p></div>
+					<img src={newsitem.urlToImage ? newsitem.urlToImage : "/no.webp"} className='lg:w-[720px] lg:h-[480px] sm:px-5 lg:px-0' />
+					<a href={newsitem.url} target="_black" className='sm:mx-5 p-2 border-r-2 border-r-white flex items-center justify-start'>{newsitem.title ? newsitem.title : "not title available"}</a>
 				</div>
 			})
 		}</div>
