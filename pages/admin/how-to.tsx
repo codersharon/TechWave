@@ -27,27 +27,24 @@ const HowTo = (props) => {
 
 	const SubmitPost = async () => {
 		const url = '/api/how-to';
-		if (postTitle == null || postTitle == "" || postDate == null || postDate == "") {
-			alert('Title or Date is Emty');
-		} else {
-			const response = await fetch(url, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					title: title,
-					content: content,
-					image: image,
-					links: JSON.parse(links),
-					date: date,
-					tags: JSON.parse(tags),
-				}),
-			});
-	
-			const text = await response.json();
-			alert('Post maded in succesfully!');
-		}
+
+		const response = await fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				title: title,
+				content: content,
+				image: image,
+				links: links,
+				date: date,
+				tags: tags,
+			}),
+		});
+
+		const text = await response.json();
+		alert('Post maded in succesfully!');
 	};
 
 	return (

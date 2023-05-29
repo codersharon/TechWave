@@ -26,26 +26,23 @@ const Admin = (props: any) => {
 	
 	const SubmitPost = async () => {		
 		const url = '/api/post';
-		if (postTitle == null || postTitle == "" || postDate == null || postDate == "") {
-			alert('Title or Date is Emty');
-		} else {
-			const response = await fetch(url, {
-			    method: 'POST',
-			    headers: {
-			        'Content-Type': 'application/json',
-			    },
-			    body: JSON.stringify({
-					  title: postTitle,
-					  image: postImage,
-						links: JSON.parse(postLinks),
-						content: postContent,
-					  date: postDate,
-					  tags: JSON.parse(postTags),
-					}),
-			});		
-			const text = await response.json();
-			alert('Post maded in succesfully!');
-		}
+		
+		const response = await fetch(url, {
+		    method: 'POST',
+		    headers: {
+		        'Content-Type': 'application/json',
+		    },
+		    body: JSON.stringify({
+				  title: postTitle,
+				  image: postImage,
+					links: postLinks,
+					content: postContent,
+				  date: postDate,
+				  tags: postTags,
+				}),
+		});		
+		const text = await response.json();
+		alert('Post maded in succesfully!');
 	};
 
   return (

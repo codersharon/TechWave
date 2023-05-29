@@ -4,7 +4,7 @@ const AppsSchema = new mongoose.Schema({
 	title: { type: String, required: true},
 	content: { type: String, required: false },
 	image: { type: String, required: false },
-	tags: { type: Array, required: true },
+	tags: { type: String, required: true },
 	link: { type: String, required: true }
 });
 
