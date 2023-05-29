@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Footer = () => {
 	return <>
-	<footer className="sm:w-full text-gray-400 bg-gray-900 body-font sticky bottom-0 w-full">
+	<footer className="sm:w-full text-gray-400 bg-gray-900 body-font w-full">
   <div className="container px-5 py-2 mx-auto flex items-center justify-center sm:flex-row flex-col">
     <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
       <span className="ml-3 text-xl sm:text-lg cursor-default">TechWave</span>
