@@ -8,7 +8,8 @@ const Slug = (props) => {
 	const [date, setDate] = useState(props.data.date);
 	const [content, setContent] = useState(props.data.content);
 	const [image, setImage] = useState(props.data.image);
-	const [links, setLinks] = useState(props.data.links? props.data.links : []);
+	const [links, setLinks] = useState(props.data.links? props.data.links.split(" ") : []);
+	const [tags, setTags] = useState(props.data.tags? props.data.tags.split("#").slice(1, 6) : []);
 	const [ likes, setLikes ] = useState(props.data.likes);
 	const [ liked, setLiked ] = useState(false)
 	const handleLike = async () => {
@@ -50,9 +51,14 @@ const Slug = (props) => {
 			<hr></hr>
 			<p className='text-2xl my-2' >{content? content : "content"}</p>
 			<p styles={{ fontSize: "large" }}>{date? date : "date"}</p>
-			<span className='flex flex-col justify-center items-start'>{
+			<span className='border-t-2 border-white flex flex-col justify-center items-start'>{
 				links.map((link)=>{
 					return <a key={link} target='_blank' rel="noreferrer" className='text-blue-500 hover:underline' href={link}>{link}</a>
+				})
+			}</span>
+			<span className='border-t-2 border-white flex flex-col justify-center items-start'>{
+				tags.map((tag)=>{
+					return <a key={tag} target='_blank' rel="noreferrer" className='text-blue-500 hover:underline' href={"https://www.google.com/search?q=" + tag}>#{tag}</a>
 				})
 			}</span>
 			<p className='font-semibold mr-[32px] flex items-center justify-start'><img className='cursor-pointer w-10 mr-2 bg-gray-600 rounded-lg' onClick={handleLike} src={!liked? '/like.svg': '/liked.svg'} /> {likes}</p>
