@@ -31,7 +31,7 @@ const Like = async (req, res) => {
 
 			if (doc == null) {
 				const resp = await HowTo.findByIdAndUpdate(req.query.id, { likes: doc2.likes - 1})
-				res.status(200).json( {message: "unliked"} );
+				res.status(200).json( {message: "liked"} );
 			} else if(doc2 == null) {
 				const resp = await Post.findByIdAndUpdate(req.query.id, { likes: doc.likes - 1})
 				res.status(200).json( {message: "unliked"} );
