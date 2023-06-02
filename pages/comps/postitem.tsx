@@ -13,12 +13,12 @@ const PostItem = (props: any) => {
 	const [ liked, setLiked ] = useState(false)
 	const handleLike = async () => {
 		if (liked == false) {
-			const request = await fetch(`/api/post/liked?id=${id}`, { method: 'PUT' });
+			const request = await fetch(`/api/posts/liked?id=${id}`, { method: 'PUT' });
 			const response = await request.json();
 			setLiked(true);
 			setLikes(likes+1)
 		} else if (liked == true) {
-			const request = await fetch(`/api/post/unliked?id=${id}`, { method: 'PUT' });
+			const request = await fetch(`/api/posts/unliked?id=${id}`, { method: 'PUT' });
 			const response = await request.json();
 			setLiked(false);
 			setLikes(likes-1)
