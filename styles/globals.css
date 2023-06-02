@@ -3,16 +3,14 @@
 @tailwind utilities;
 
 body {
+	overflow-x: hidden;
 	padding: 0%;
 	margin: 0%;
+	background-color: black;
 }
 
 @media (min-width: 0px) and (max-width: 640px) {
 	body {
 		width: 100%;
 	}
-}
-
-body{
-	overflow-x: hidden;
 }

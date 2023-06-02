@@ -12,8 +12,8 @@ const Home: NextPage = (props) => {
 	const [posts, setPosts] = useState(props.data.posts);
 	const [news, setNews] = useState(props.news.articles)
 	const router = useRouter();
-	return <>
-
+	
+	return <div className='w-full min-h-[100vh] bg-black'>
 		<NextSeo
 			title={"TechWave"}
 			description="Online Tech guid, news, tech tricks and tips"
@@ -28,13 +28,12 @@ const Home: NextPage = (props) => {
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
-
-		<div className='flex lg:flex-row sm:flex-col items-center justify-center'>{
+		<div className='flex lg:flex-row sm:flex-col items-center justify-center bg-black'>{
 			news.map((newsitem) => {
 				return <div key={newsitem.title} className='lg:hover:blur cursor-pointer bg-black text-white text-xl font-bold'>
-					<div className='sm:flex items-center justify-start lg:hidden mx-5 border-y-2 border-gray-600'><h3 className=' my-2 text-sm'>{newsitem.author} .</h3> <p className='text-lg text-blue-500 underline'>{newsitem.source.id?newsitem.source.id : newsitem.source.name}</p></div>
+					<div className='sm:flex items-center justify-start lg:hidden mx-5 border-b-2 border-gray-600'><h3 className=' my-2 text-sm'>{newsitem.author} .</h3> <p className='text-lg text-blue-500 underline'>{newsitem.source.id?newsitem.source.id : newsitem.source.name}</p></div>
 					<img src={newsitem.urlToImage ? newsitem.urlToImage : "/no.webp"} className='lg:w-[720px] lg:h-[480px] sm:px-5 lg:px-0' />
-					<a href={newsitem.url} target="_black" className='sm:mx-5 p-2 border-r-2 border-r-white flex items-center justify-start'>{newsitem.title ? newsitem.title : "not title available"}</a>
+					<a href={newsitem.url} target="_blank" className='sm:mx-5 p-2 md:border-r-2 border-white flex items-center justify-start'>{newsitem.title ? newsitem.title : "not title available"}</a>
 				</div>
 			})
 		}</div>
@@ -55,7 +54,7 @@ const Home: NextPage = (props) => {
 
 			</div>
 		</div>
-	</>
+	</div>
 }
 
 export async function getServerSideProps(context) {
